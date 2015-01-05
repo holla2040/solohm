@@ -7,6 +7,7 @@ board
 
 version
     0.1
+    150101
 
 description
     Top layer:                  pcbname.GTL
@@ -20,7 +21,6 @@ description
     drd drill data
     dri drill info
     gpi gerber info
-    readme.txt info, has fudicial info
 
 fudicials at
     0.25,0.1
