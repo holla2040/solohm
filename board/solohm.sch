@@ -268,7 +268,7 @@
 <pad name="8" x="-22.86" y="-6.35" drill="1.016" diameter="1.8796"/>
 <pad name="9" x="-22.86" y="-8.89" drill="1.016" diameter="1.8796"/>
 <pad name="10" x="-22.86" y="-11.43" drill="1.016" diameter="1.8796"/>
-<text x="-25.4" y="12.7" size="1.27" layer="25" font="vector" ratio="10" align="bottom-center">P1</text>
+<text x="-25.4" y="12.7" size="1.016" layer="25" font="vector" ratio="22" align="bottom-center">P1</text>
 <rectangle x1="-23.114" y1="-4.064" x2="-22.606" y2="-3.556" layer="51" rot="R270"/>
 <rectangle x1="-23.114" y1="-1.524" x2="-22.606" y2="-1.016" layer="51" rot="R270"/>
 <rectangle x1="-23.114" y1="1.016" x2="-22.606" y2="1.524" layer="51" rot="R270"/>
@@ -283,9 +283,9 @@
 <wire x1="-24.13" y1="10.16" x2="-24.13" y2="12.7" width="0.2286" layer="21"/>
 <wire x1="-24.13" y1="12.7" x2="-21.59" y2="12.7" width="0.2286" layer="21"/>
 <wire x1="-21.59" y1="10.16" x2="-22.225" y2="10.16" width="0.2286" layer="21"/>
-<text x="-17.526" y="12.7" size="1.27" layer="25" font="vector" ratio="10" align="bottom-center">P3</text>
-<text x="17.78" y="12.7" size="1.27" layer="25" font="vector" ratio="10" align="bottom-center">P4</text>
-<text x="25.781" y="12.7" size="1.27" layer="25" font="vector" ratio="10" align="bottom-center">P2</text>
+<text x="-17.526" y="12.7" size="1.016" layer="25" font="vector" ratio="22" align="bottom-center">P3</text>
+<text x="17.78" y="12.7" size="1.016" layer="25" font="vector" ratio="22" align="bottom-center">P4</text>
+<text x="25.781" y="12.7" size="1.016" layer="25" font="vector" ratio="22" align="bottom-center">P2</text>
 <wire x1="-19.05" y1="-3.175" x2="-19.05" y2="-4.445" width="0.2032" layer="21"/>
 <wire x1="-19.05" y1="-4.445" x2="-19.685" y2="-5.08" width="0.2032" layer="21"/>
 <wire x1="-20.955" y1="-5.08" x2="-21.59" y2="-4.445" width="0.2032" layer="21"/>
@@ -516,54 +516,54 @@
 <wire x1="21.59" y1="12.7" x2="24.13" y2="12.7" width="0.2286" layer="21"/>
 <wire x1="24.13" y1="12.7" x2="24.13" y2="10.16" width="0.2286" layer="21"/>
 <wire x1="24.13" y1="10.16" x2="23.495" y2="10.16" width="0.2286" layer="21"/>
-<text x="-25.146" y="8.636" size="0.889" layer="21" font="vector" align="bottom-right">P58</text>
-<text x="-25.146" y="6.096" size="0.889" layer="21" font="vector" align="bottom-right">P04</text>
-<text x="-25.146" y="3.556" size="0.889" layer="21" font="vector" align="bottom-right">P03</text>
-<text x="-25.146" y="1.016" size="0.889" layer="21" font="vector" align="bottom-right">P61</text>
-<text x="-25.146" y="-1.524" size="0.889" layer="21" font="vector" align="bottom-right">P59</text>
-<text x="-25.146" y="-4.064" size="0.889" layer="21" font="vector" align="bottom-right">P05</text>
-<text x="-25.146" y="-6.604" size="0.889" layer="21" font="vector" align="bottom-right">P62</text>
-<text x="-25.146" y="-9.144" size="0.889" layer="21" font="vector" align="bottom-right">P01</text>
-<text x="-25.146" y="-11.684" size="0.889" layer="21" font="vector" align="bottom-right">P02</text>
-<text x="-18.034" y="11.176" size="0.889" layer="21" font="vector">5V</text>
-<text x="-18.034" y="8.636" size="0.889" layer="21" font="vector">GND</text>
-<text x="-18.034" y="6.096" size="0.889" layer="21" font="vector">P57</text>
-<text x="-18.034" y="-9.144" size="0.889" layer="21" font="vector">P64</text>
-<text x="-20.32" y="13.716" size="0.889" layer="21" font="vector" align="bottom-center">21</text>
-<text x="-22.86" y="-13.843" size="0.889" layer="21" font="vector" align="top-center">10</text>
-<text x="-20.32" y="-13.843" size="0.889" layer="21" font="vector" align="top-center">30</text>
-<text x="-18.034" y="3.556" size="0.889" layer="21" font="vector">P60</text>
-<text x="-18.034" y="1.016" size="0.889" layer="21" font="vector">P58</text>
-<text x="-18.034" y="-1.524" size="0.889" layer="21" font="vector">P59</text>
-<text x="-18.034" y="-4.064" size="0.889" layer="21" font="vector">P63</text>
-<text x="-18.034" y="-6.604" size="0.889" layer="21" font="vector">P53</text>
-<text x="-18.034" y="-11.684" size="0.889" layer="21" font="vector">P50</text>
-<text x="20.32" y="13.716" size="0.889" layer="21" font="vector" align="bottom-center">40</text>
-<text x="22.86" y="13.716" size="0.889" layer="21" font="vector" align="bottom-center">20</text>
-<text x="20.32" y="-13.716" size="0.889" layer="21" font="vector" align="top-center">31</text>
-<text x="23.114" y="-13.716" size="0.889" layer="21" font="vector" align="top-center">11</text>
-<text x="18.034" y="8.636" size="0.889" layer="21" font="vector" align="bottom-right">P01</text>
-<text x="18.034" y="6.096" size="0.889" layer="21" font="vector" align="bottom-right">P17</text>
-<text x="18.034" y="3.556" size="0.889" layer="21" font="vector" align="bottom-right">P64</text>
-<text x="18.034" y="1.016" size="0.889" layer="21" font="vector" align="bottom-right">P21</text>
-<text x="18.034" y="-1.524" size="0.889" layer="21" font="vector" align="bottom-right">P18</text>
-<text x="18.034" y="-4.064" size="0.889" layer="21" font="vector" align="bottom-right">P62</text>
-<text x="18.034" y="-6.604" size="0.889" layer="21" font="vector" align="bottom-right">P60</text>
-<text x="18.034" y="-9.144" size="0.889" layer="21" font="vector" align="bottom-right">P16</text>
-<text x="18.034" y="-11.684" size="0.889" layer="21" font="vector" align="bottom-right">P17</text>
-<text x="25.146" y="11.176" size="0.889" layer="21" font="vector">GND</text>
-<text x="25.146" y="8.636" size="0.889" layer="21" font="vector">P18</text>
-<text x="25.146" y="6.096" size="0.889" layer="21" font="vector">P08</text>
-<text x="25.146" y="-9.144" size="0.889" layer="21" font="vector">P55</text>
-<text x="25.146" y="3.556" size="0.889" layer="21" font="vector">P45</text>
-<text x="25.146" y="1.016" size="0.889" layer="21" font="vector">RST</text>
-<text x="25.146" y="-1.524" size="0.889" layer="21" font="vector">P07</text>
-<text x="25.146" y="-4.064" size="0.889" layer="21" font="vector">P06</text>
-<text x="25.146" y="-6.604" size="0.889" layer="21" font="vector">P21</text>
-<text x="25.146" y="-11.684" size="0.889" layer="21" font="vector">P15</text>
-<text x="18.034" y="11.176" size="0.889" layer="21" font="vector" align="bottom-right">P02</text>
-<text x="-22.86" y="13.716" size="0.889" layer="21" font="vector" align="bottom-center">1</text>
-<text x="-25.146" y="11.176" size="0.889" layer="21" font="vector" align="bottom-right">3V3</text>
+<text x="-25.146" y="8.636" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P58</text>
+<text x="-25.146" y="6.096" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P04</text>
+<text x="-25.146" y="3.556" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P03</text>
+<text x="-25.146" y="1.016" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P61</text>
+<text x="-25.146" y="-1.524" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P59</text>
+<text x="-25.146" y="-4.064" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P05</text>
+<text x="-25.146" y="-6.604" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P62</text>
+<text x="-25.146" y="-9.144" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P01</text>
+<text x="-25.146" y="-11.684" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P02</text>
+<text x="-18.034" y="11.176" size="1.016" layer="21" font="vector" ratio="22">5V</text>
+<text x="-18.034" y="8.636" size="1.016" layer="21" font="vector" ratio="22">GND</text>
+<text x="-18.034" y="6.096" size="1.016" layer="21" font="vector" ratio="22">P57</text>
+<text x="-18.034" y="-9.144" size="1.016" layer="21" font="vector" ratio="22">P64</text>
+<text x="-20.32" y="13.716" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">21</text>
+<text x="-22.86" y="-13.843" size="1.016" layer="21" font="vector" ratio="22" align="top-center">10</text>
+<text x="-20.32" y="-13.843" size="1.016" layer="21" font="vector" ratio="22" align="top-center">30</text>
+<text x="-18.034" y="3.556" size="1.016" layer="21" font="vector" ratio="22">P60</text>
+<text x="-18.034" y="1.016" size="1.016" layer="21" font="vector" ratio="22">P58</text>
+<text x="-18.034" y="-1.524" size="1.016" layer="21" font="vector" ratio="22">P59</text>
+<text x="-18.034" y="-4.064" size="1.016" layer="21" font="vector" ratio="22">P63</text>
+<text x="-18.034" y="-6.604" size="1.016" layer="21" font="vector" ratio="22">P53</text>
+<text x="-18.034" y="-11.684" size="1.016" layer="21" font="vector" ratio="22">P50</text>
+<text x="20.32" y="13.716" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">40</text>
+<text x="22.86" y="13.716" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">20</text>
+<text x="20.32" y="-13.716" size="1.016" layer="21" font="vector" ratio="22" align="top-center">31</text>
+<text x="23.114" y="-13.716" size="1.016" layer="21" font="vector" ratio="22" align="top-center">11</text>
+<text x="18.034" y="8.636" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P01</text>
+<text x="18.034" y="6.096" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P17</text>
+<text x="18.034" y="3.556" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P64</text>
+<text x="18.034" y="1.016" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P21</text>
+<text x="18.034" y="-1.524" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P18</text>
+<text x="18.034" y="-4.064" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P62</text>
+<text x="18.034" y="-6.604" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P60</text>
+<text x="18.034" y="-9.144" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P16</text>
+<text x="18.034" y="-11.684" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P17</text>
+<text x="25.146" y="11.176" size="1.016" layer="21" font="vector" ratio="22">GND</text>
+<text x="25.146" y="8.636" size="1.016" layer="21" font="vector" ratio="22">P18</text>
+<text x="25.146" y="6.096" size="1.016" layer="21" font="vector" ratio="22">P08</text>
+<text x="25.146" y="-9.144" size="1.016" layer="21" font="vector" ratio="22">P55</text>
+<text x="25.146" y="3.556" size="1.016" layer="21" font="vector" ratio="22">P45</text>
+<text x="25.146" y="1.016" size="1.016" layer="21" font="vector" ratio="22">RST</text>
+<text x="25.146" y="-1.524" size="1.016" layer="21" font="vector" ratio="22">P07</text>
+<text x="25.146" y="-4.064" size="1.016" layer="21" font="vector" ratio="22">P06</text>
+<text x="25.146" y="-6.604" size="1.016" layer="21" font="vector" ratio="22">P21</text>
+<text x="25.146" y="-11.684" size="1.016" layer="21" font="vector" ratio="22">P15</text>
+<text x="18.034" y="11.176" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P02</text>
+<text x="-22.86" y="13.716" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">1</text>
+<text x="-25.146" y="11.176" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">3V3</text>
 <wire x1="-29.21" y1="-33.02" x2="29.21" y2="-33.02" width="0.127" layer="48" style="shortdash"/>
 <wire x1="29.21" y1="-33.02" x2="29.21" y2="60.96" width="0.127" layer="48" style="shortdash"/>
 <wire x1="29.21" y1="60.96" x2="-15.24" y2="60.96" width="0.127" layer="48" style="shortdash"/>
@@ -20164,7 +20164,7 @@ Standard 5-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </class>
 </classes>
 <parts>
-<part name="A1" library="TI-CC3200" deviceset="CC3200-LAUNCHXL-BOOSTERPACK" device="" value=""/>
+<part name="A1" library="TI-CC3200" deviceset="CC3200-LAUNCHXL-BOOSTERPACK" device="" value="CC3200-LAUNCHXL-BOOSTERPACK"/>
 <part name="PANEL" library="holla" deviceset="M02" device="-6.35MM"/>
 <part name="Q1" library="holla" deviceset="1984620" device="" value=""/>
 <part name="Q2" library="holla" deviceset="1984620" device="" value=""/>
