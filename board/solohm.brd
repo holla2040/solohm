@@ -6831,6 +6831,38 @@ grid 10 mm, diameter 10.5 mm</description>
 </package>
 </packages>
 </library>
+<library name="relay">
+<description>&lt;b&gt;Relays&lt;/b&gt;&lt;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eichhoff
+&lt;li&gt;Finder
+&lt;li&gt;Fujitsu
+&lt;li&gt;HAMLIN
+&lt;li&gt;OMRON
+&lt;li&gt;Matsushita
+&lt;li&gt;NAiS
+&lt;li&gt;Siemens
+&lt;li&gt;Schrack
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="AZ8">
+<description>&lt;b&gt;MINIATURE PC BOARD RELAY&lt;/b&gt;&lt;p&gt;
+Source: www.azettler.com .. AZ8-1ch-12DSE.PDF</description>
+<wire x1="-10.59" y1="7.75" x2="-10.59" y2="-8.225" width="0.2032" layer="21"/>
+<wire x1="10.5068" y1="7.75" x2="-10.59" y2="7.75" width="0.2032" layer="21"/>
+<wire x1="10.5068" y1="7.75" x2="10.5068" y2="-8.225" width="0.2032" layer="21"/>
+<wire x1="10.5068" y1="-8.2268" x2="-10.59" y2="-8.2268" width="0.2032" layer="21"/>
+<pad name="1" x="8.89" y="6.35" drill="1.4" diameter="2" rot="R180"/>
+<pad name="2" x="-3.81" y="6.35" drill="1.4" diameter="2" rot="R180"/>
+<pad name="5" x="-8.89" y="6.35" drill="1.4" diameter="2" rot="R180"/>
+<pad name="3" x="-8.89" y="-1.27" drill="1.4" diameter="2" rot="R180"/>
+<pad name="4" x="-3.81" y="-6.35" drill="1.4" diameter="2" rot="R180"/>
+<text x="-10.16" y="-10.16" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.81" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7182,7 +7214,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="30.607" y="9.779" size="1" layer="25" ratio="22"/>
 <attribute name="VALUE" x="34.925" y="8.255" size="1" layer="27" ratio="22"/>
 </element>
-<element name="DACOUT" library="holla" package="TPTHRU" value="TESTPOINTTHRU" x="62.23" y="75.565" smashed="yes" rot="R270">
+<element name="DACOUT" library="holla" package="TPTHRU" value="" x="62.23" y="75.565" smashed="yes" rot="R270">
 <attribute name="DNP" value="1" x="62.23" y="75.565" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="59.055" y="73.406" size="1" layer="25" ratio="22"/>
 </element>
@@ -7442,6 +7474,13 @@ design rules under a new name.</description>
 <attribute name="NAME" x="76.962" y="83.693" size="1" layer="25" ratio="22" rot="R270"/>
 <attribute name="VALUE" x="74.041" y="82.931" size="1" layer="27" ratio="22" rot="R270"/>
 </element>
+<element name="K1" library="relay" package="AZ8" value="" x="1.397" y="-8.001">
+<attribute name="OC_NEWARK" value="unknown" x="1.397" y="-8.001" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="1.397" y="-8.001" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="1.397" y="-8.001" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="1.397" y="-8.001" size="1.778" layer="27" display="off"/>
+</element>
+<element name="STRING" library="holla" package="OSTT702" value="" x="-18.923" y="-8.636"/>
 </elements>
 <signals>
 <signal name="I2C_SCL">
@@ -7524,16 +7563,6 @@ design rules under a new name.</description>
 <contactref element="C7" pad="2"/>
 <contactref element="R8" pad="2"/>
 <contactref element="C8" pad="2"/>
-<contactref element="Q1" pad="1"/>
-<contactref element="Q8" pad="1"/>
-<contactref element="Q7" pad="1"/>
-<contactref element="Q6" pad="1"/>
-<contactref element="Q5" pad="1"/>
-<contactref element="Q4" pad="1"/>
-<contactref element="Q3" pad="1"/>
-<contactref element="Q2" pad="1"/>
-<contactref element="R2" pad="1"/>
-<contactref element="C2" pad="2"/>
 <contactref element="PANEL" pad="1"/>
 <contactref element="GND" pad="1"/>
 <contactref element="U5" pad="1"/>
@@ -7544,9 +7573,7 @@ design rules under a new name.</description>
 <contactref element="U9" pad="GND"/>
 <contactref element="1WIRE" pad="1"/>
 <contactref element="D10" pad="C"/>
-<contactref element="D2" pad="A"/>
 <contactref element="D3" pad="A"/>
-<contactref element="D1" pad="A"/>
 <contactref element="D11" pad="2"/>
 <contactref element="U6" pad="EXP"/>
 <contactref element="U6" pad="6"/>
@@ -7628,6 +7655,22 @@ design rules under a new name.</description>
 <contactref element="U12" pad="GND"/>
 <contactref element="JP3" pad="2"/>
 <contactref element="R35" pad="1"/>
+<contactref element="Q1" pad="1"/>
+<contactref element="Q8" pad="1"/>
+<contactref element="Q7" pad="1"/>
+<contactref element="Q6" pad="1"/>
+<contactref element="Q5" pad="1"/>
+<contactref element="Q4" pad="1"/>
+<contactref element="Q3" pad="1"/>
+<contactref element="Q2" pad="1"/>
+<contactref element="R2" pad="1"/>
+<contactref element="C2" pad="2"/>
+<contactref element="D2" pad="A"/>
+<contactref element="D1" pad="A"/>
+<contactref element="K1" pad="3"/>
+<contactref element="STRING" pad="1"/>
+<wire x1="-7.493" y1="-9.271" x2="-18.923" y2="-8.636" width="0" layer="19" extent="1-1"/>
+<wire x1="5.08" y1="13.97" x2="-7.493" y2="-9.271" width="0" layer="19" extent="1-1"/>
 <wire x1="22.225" y1="19.625" x2="25.908" y2="22.186" width="0" layer="19" extent="1-1"/>
 <wire x1="15.875" y1="14.04" x2="21.209" y2="14.39" width="0" layer="19" extent="1-1"/>
 <wire x1="73.66" y1="9.105" x2="62.865" y2="7.62" width="0" layer="19" extent="1-1"/>
@@ -8666,6 +8709,13 @@ design rules under a new name.</description>
 <vertex x="21.971" y="51.181"/>
 <vertex x="19.939" y="51.181"/>
 </polygon>
+<contactref element="K1" pad="4"/>
+<wire x1="5.08" y1="10.47" x2="-2.413" y2="-14.351" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$20">
+<contactref element="K1" pad="1"/>
+<contactref element="STRING" pad="2"/>
+<wire x1="10.287" y1="-1.651" x2="-12.573" y2="-8.636" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
