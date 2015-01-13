@@ -167,18 +167,18 @@
 <hole x="39.878" y="7.747" drill="3.2"/>
 <hole x="44.3865" y="7.747" drill="3.2"/>
 <hole x="48.895" y="7.747" drill="3.2"/>
-<text x="63.119" y="89.535" size="1" layer="21" ratio="22" align="center-right">SolOhm</text>
-<text x="72.009" y="89.535" size="1" layer="21" ratio="22" align="center-left">V0.1
+<text x="63.119" y="88.9" size="1.016" layer="21" ratio="21" align="center-right">SolOhm</text>
+<text x="72.009" y="88.9" size="1.016" layer="21" ratio="21" align="center-left">V0.1
 150101</text>
-<text x="19.304" y="93.472" size="3.81" layer="21" ratio="22">+</text>
-<text x="30.734" y="93.472" size="3.81" layer="21" ratio="22">-</text>
-<text x="8.636" y="6.096" size="1" layer="21" ratio="22">G</text>
-<text x="69.342" y="11.176" size="1" layer="21" ratio="22">VCC</text>
-<text x="8.636" y="9.652" size="1" layer="21" ratio="22">D</text>
-<text x="8.636" y="12.954" size="1" layer="21" ratio="22">S</text>
+<text x="19.304" y="93.472" size="1.016" layer="21" ratio="21">+</text>
+<text x="30.734" y="93.472" size="1.016" layer="21" ratio="21">-</text>
+<text x="8.636" y="6.096" size="1.016" layer="21" ratio="21">G</text>
+<text x="69.342" y="11.176" size="1.016" layer="21" ratio="21">VCC</text>
+<text x="8.636" y="9.652" size="1.016" layer="21" ratio="21">D</text>
+<text x="8.636" y="12.954" size="1.016" layer="21" ratio="21">S</text>
 <hole x="56.134" y="82.7405" drill="3.2"/>
-<text x="53.9115" y="85.0265" size="1" layer="25" ratio="22">POWER</text>
-<text x="74.168" y="72.644" size="1" layer="21" ratio="22" distance="24" align="center-right">RST
+<text x="53.9115" y="85.0265" size="1.016" layer="25" ratio="21">POWER</text>
+<text x="74.168" y="72.644" size="1.016" layer="21" ratio="21" distance="24" align="center-right">RST
 
 SDA
 
@@ -187,7 +187,7 @@ SCL
 GND
 
 3.3</text>
-<text x="61.087" y="11.176" size="1" layer="21" ratio="22">GND</text>
+<text x="61.087" y="11.176" size="1.016" layer="21" ratio="21">GND</text>
 </plain>
 <libraries>
 <library name="TI-CC3200">
@@ -497,54 +497,54 @@ GND
 <wire x1="21.59" y1="12.7" x2="24.13" y2="12.7" width="0.2286" layer="21"/>
 <wire x1="24.13" y1="12.7" x2="24.13" y2="10.16" width="0.2286" layer="21"/>
 <wire x1="24.13" y1="10.16" x2="23.495" y2="10.16" width="0.2286" layer="21"/>
-<text x="-25.146" y="8.636" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P58</text>
-<text x="-25.146" y="6.096" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P04</text>
-<text x="-25.146" y="3.556" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P03</text>
-<text x="-25.146" y="1.016" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P61</text>
-<text x="-25.146" y="-1.524" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P59</text>
-<text x="-25.146" y="-4.064" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P05</text>
-<text x="-25.146" y="-6.604" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P62</text>
-<text x="-25.146" y="-9.144" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P01</text>
-<text x="-25.146" y="-11.684" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P02</text>
-<text x="-18.034" y="11.176" size="1.016" layer="21" font="vector" ratio="22">5V</text>
-<text x="-18.034" y="8.636" size="1.016" layer="21" font="vector" ratio="22">GND</text>
-<text x="-18.034" y="6.096" size="1.016" layer="21" font="vector" ratio="22">P57</text>
-<text x="-18.034" y="-9.144" size="1.016" layer="21" font="vector" ratio="22">P64</text>
-<text x="-20.32" y="13.716" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">21</text>
-<text x="-22.86" y="-13.843" size="1.016" layer="21" font="vector" ratio="22" align="top-center">10</text>
-<text x="-20.32" y="-13.843" size="1.016" layer="21" font="vector" ratio="22" align="top-center">30</text>
-<text x="-18.034" y="3.556" size="1.016" layer="21" font="vector" ratio="22">P60</text>
-<text x="-18.034" y="1.016" size="1.016" layer="21" font="vector" ratio="22">P58</text>
-<text x="-18.034" y="-1.524" size="1.016" layer="21" font="vector" ratio="22">P59</text>
-<text x="-18.034" y="-4.064" size="1.016" layer="21" font="vector" ratio="22">P63</text>
-<text x="-18.034" y="-6.604" size="1.016" layer="21" font="vector" ratio="22">P53</text>
-<text x="-18.034" y="-11.684" size="1.016" layer="21" font="vector" ratio="22">P50</text>
-<text x="20.32" y="13.716" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">40</text>
-<text x="22.86" y="13.716" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">20</text>
-<text x="20.32" y="-13.716" size="1.016" layer="21" font="vector" ratio="22" align="top-center">31</text>
-<text x="23.114" y="-13.716" size="1.016" layer="21" font="vector" ratio="22" align="top-center">11</text>
-<text x="18.034" y="8.636" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P01</text>
-<text x="18.034" y="6.096" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P17</text>
-<text x="18.034" y="3.556" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P64</text>
-<text x="18.034" y="1.016" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P21</text>
-<text x="18.034" y="-1.524" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P18</text>
-<text x="18.034" y="-4.064" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P62</text>
-<text x="18.034" y="-6.604" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P60</text>
-<text x="18.034" y="-9.144" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P16</text>
-<text x="18.034" y="-11.684" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P17</text>
-<text x="25.146" y="11.176" size="1.016" layer="21" font="vector" ratio="22">GND</text>
-<text x="25.146" y="8.636" size="1.016" layer="21" font="vector" ratio="22">P18</text>
-<text x="25.146" y="6.096" size="1.016" layer="21" font="vector" ratio="22">P08</text>
-<text x="25.146" y="-9.144" size="1.016" layer="21" font="vector" ratio="22">P55</text>
-<text x="25.146" y="3.556" size="1.016" layer="21" font="vector" ratio="22">P45</text>
-<text x="25.146" y="1.016" size="1.016" layer="21" font="vector" ratio="22">RST</text>
-<text x="25.146" y="-1.524" size="1.016" layer="21" font="vector" ratio="22">P07</text>
-<text x="25.146" y="-4.064" size="1.016" layer="21" font="vector" ratio="22">P06</text>
-<text x="25.146" y="-6.604" size="1.016" layer="21" font="vector" ratio="22">P21</text>
-<text x="25.146" y="-11.684" size="1.016" layer="21" font="vector" ratio="22">P15</text>
-<text x="18.034" y="11.176" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">P02</text>
-<text x="-22.86" y="13.716" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">1</text>
-<text x="-25.146" y="11.176" size="1.016" layer="21" font="vector" ratio="22" align="bottom-right">3V3</text>
+<text x="-24.384" y="8.89" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P58</text>
+<text x="-24.384" y="6.35" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P04</text>
+<text x="-24.384" y="3.81" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P03</text>
+<text x="-24.384" y="1.27" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P61</text>
+<text x="-24.384" y="-1.27" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P59</text>
+<text x="-24.384" y="-3.81" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P05</text>
+<text x="-24.384" y="-6.35" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P62</text>
+<text x="-24.384" y="-8.89" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P01</text>
+<text x="-24.384" y="-11.43" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P02</text>
+<text x="-18.542" y="11.43" size="1.016" layer="21" font="vector" ratio="22" align="center-left">5V</text>
+<text x="-18.542" y="8.89" size="1.016" layer="21" font="vector" ratio="22" align="center-left">GND</text>
+<text x="-18.542" y="6.35" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P57</text>
+<text x="-18.542" y="-8.89" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P64</text>
+<text x="-20.32" y="13.208" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">21</text>
+<text x="-22.86" y="-13.208" size="1.016" layer="21" font="vector" ratio="22" align="top-center">10</text>
+<text x="-20.32" y="-13.208" size="1.016" layer="21" font="vector" ratio="22" align="top-center">30</text>
+<text x="-18.542" y="3.81" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P60</text>
+<text x="-18.542" y="1.27" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P58</text>
+<text x="-18.542" y="-1.27" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P59</text>
+<text x="-18.542" y="-3.81" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P63</text>
+<text x="-18.542" y="-6.35" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P53</text>
+<text x="-18.542" y="-11.43" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P50</text>
+<text x="20.32" y="13.208" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">40</text>
+<text x="22.86" y="13.208" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">20</text>
+<text x="20.32" y="-13.208" size="1.016" layer="21" font="vector" ratio="22" align="top-center">31</text>
+<text x="23.114" y="-13.208" size="1.016" layer="21" font="vector" ratio="22" align="top-center">11</text>
+<text x="18.796" y="8.89" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P01</text>
+<text x="18.796" y="6.35" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P17</text>
+<text x="18.796" y="3.81" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P64</text>
+<text x="18.796" y="1.27" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P21</text>
+<text x="18.796" y="-1.27" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P18</text>
+<text x="18.796" y="-3.81" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P62</text>
+<text x="18.796" y="-6.35" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P60</text>
+<text x="18.796" y="-8.89" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P16</text>
+<text x="18.796" y="-11.43" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P17</text>
+<text x="24.638" y="11.43" size="1.016" layer="21" font="vector" ratio="22" align="center-left">GND</text>
+<text x="24.638" y="8.89" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P18</text>
+<text x="24.638" y="6.35" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P08</text>
+<text x="24.638" y="-8.89" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P55</text>
+<text x="24.638" y="3.81" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P45</text>
+<text x="24.638" y="1.27" size="1.016" layer="21" font="vector" ratio="22" align="center-left">RST</text>
+<text x="24.638" y="-1.27" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P07</text>
+<text x="24.638" y="-3.81" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P06</text>
+<text x="24.638" y="-6.35" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P21</text>
+<text x="24.638" y="-11.43" size="1.016" layer="21" font="vector" ratio="22" align="center-left">P15</text>
+<text x="18.796" y="11.43" size="1.016" layer="21" font="vector" ratio="22" align="center-right">P02</text>
+<text x="-22.86" y="13.208" size="1.016" layer="21" font="vector" ratio="22" align="bottom-center">1</text>
+<text x="-24.384" y="11.43" size="1.016" layer="21" font="vector" ratio="22" align="center-right">3V3</text>
 <wire x1="-29.21" y1="-33.02" x2="29.21" y2="-33.02" width="0.127" layer="48" style="shortdash"/>
 <wire x1="29.21" y1="-33.02" x2="29.21" y2="60.96" width="0.127" layer="48" style="shortdash"/>
 <wire x1="29.21" y1="60.96" x2="-15.24" y2="60.96" width="0.127" layer="48" style="shortdash"/>
@@ -599,9 +599,6 @@ TERMINAL BLOCK 6.35MM 2POS PCB
 <wire x1="9.542" y1="4.5" x2="-3.158" y2="4.5" width="0.2032" layer="21"/>
 <wire x1="9.542" y1="4.05" x2="9.542" y2="4.5" width="0.2032" layer="21"/>
 <wire x1="-3.158" y1="2.304" x2="9.542" y2="2.304" width="0.2032" layer="21"/>
-<wire x1="4.3692" y1="-2.7529" x2="6.4246" y2="-0.6974" width="0.2032" layer="51"/>
-<wire x1="7.0145" y1="-0.1076" x2="7.8699" y2="0.7478" width="0.2032" layer="51"/>
-<wire x1="6.4246" y1="-0.6974" x2="7.0145" y2="-0.1076" width="0.2032" layer="51"/>
 <wire x1="8.3649" y1="0.2529" x2="8.3648" y2="0.2528" width="0.1016" layer="21"/>
 <wire x1="8.3648" y1="0.2528" x2="4.8642" y2="-3.2478" width="0.2032" layer="21"/>
 <wire x1="-3.158" y1="-4.7787" x2="-3.158" y2="-4.843" width="0.2032" layer="21"/>
@@ -613,19 +610,16 @@ TERMINAL BLOCK 6.35MM 2POS PCB
 <wire x1="9.542" y1="-4.7787" x2="9.542" y2="-2.75" width="0.2032" layer="21"/>
 <wire x1="-3.158" y1="2.304" x2="-3.158" y2="2" width="0.2032" layer="21"/>
 <wire x1="-3.158" y1="2" x2="-3.158" y2="0.25" width="0.2032" layer="21"/>
-<wire x1="0.6645" y1="-0.1076" x2="1.5199" y2="0.7478" width="0.2032" layer="51"/>
 <wire x1="9.542" y1="-2.25" x2="9.542" y2="-0.25" width="0.2032" layer="21"/>
 <wire x1="9.542" y1="-0.25" x2="9.542" y2="0.25" width="0.2032" layer="21"/>
 <wire x1="-3.158" y1="0.25" x2="-3.158" y2="-0.25" width="0.2032" layer="21"/>
 <wire x1="-3.158" y1="-0.25" x2="-3.158" y2="-2.25" width="0.2032" layer="21"/>
-<wire x1="0.0746" y1="-0.6974" x2="0.6645" y2="-0.1076" width="0.2032" layer="51"/>
 <wire x1="9.542" y1="0.25" x2="9.542" y2="2" width="0.2032" layer="21"/>
 <wire x1="9.542" y1="2" x2="9.542" y2="2.304" width="0.2032" layer="21"/>
 <wire x1="-3.158" y1="2" x2="0.017" y2="2" width="0.2032" layer="21"/>
 <wire x1="0.017" y1="2" x2="6.367" y2="2" width="0.2032" layer="21"/>
 <wire x1="6.367" y1="2" x2="9.542" y2="2" width="0.2032" layer="21"/>
 <wire x1="-1.9808" y1="-2.7529" x2="-1.9807" y2="-2.7528" width="0.1016" layer="21"/>
-<wire x1="-1.9807" y1="-2.7528" x2="0.0746" y2="-0.6974" width="0.2032" layer="51"/>
 <wire x1="-3.158" y1="-2.25" x2="-3.158" y2="-2.75" width="0.2032" layer="21"/>
 <wire x1="-3.158" y1="-2.75" x2="-3.158" y2="-4.7787" width="0.2032" layer="21"/>
 <wire x1="9.542" y1="-2.75" x2="9.542" y2="-2.25" width="0.2032" layer="21"/>
@@ -666,6 +660,8 @@ TERMINAL BLOCK 6.35MM 2POS PCB
 <wire x1="4.462" y1="-7.9537" x2="4.462" y2="-4.7787" width="0.2032" layer="21"/>
 <wire x1="8.272" y1="-7.9537" x2="8.272" y2="-4.7787" width="0.2032" layer="21"/>
 <wire x1="2.0148" y1="0.2528" x2="-1.4858" y2="-3.2478" width="0.2032" layer="21"/>
+<wire x1="7.8568" y1="0.7608" x2="4.3562" y2="-2.7398" width="0.2032" layer="21"/>
+<wire x1="1.5068" y1="0.7608" x2="-1.9938" y2="-2.7398" width="0.2032" layer="21"/>
 </package>
 <package name="1984620">
 <wire x1="-1.75" y1="3.1" x2="9.019" y2="3.1" width="0.2032" layer="21"/>
@@ -736,8 +732,8 @@ TERMINAL BLOCK 6.35MM 2POS PCB
 <wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
 <smd name="1" x="-0.95" y="0" dx="1.3" dy="1.5" layer="1"/>
 <smd name="2" x="0.95" y="0" dx="1.3" dy="1.5" layer="1"/>
-<text x="-1.27" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+<text x="0" y="1.27" size="1.016" layer="25" ratio="21" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.27" size="1.016" layer="27" ratio="21" align="top-center">&gt;VALUE</text>
 <rectangle x1="-1.0922" y1="-0.7239" x2="-0.3421" y2="0.7262" layer="51"/>
 <rectangle x1="0.3556" y1="-0.7239" x2="1.1057" y2="0.7262" layer="51"/>
 <rectangle x1="-0.1001" y1="-0.4001" x2="0.1001" y2="0.4001" layer="35"/>
@@ -752,8 +748,8 @@ TERMINAL BLOCK 6.35MM 2POS PCB
 <wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.2032" layer="51"/>
 <smd name="1" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
 <smd name="2" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
-<text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
+<text x="0" y="0.762" size="1.016" layer="25" ratio="21" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.762" size="1.016" layer="27" ratio="21" align="top-center">&gt;VALUE</text>
 <rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
 <rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
@@ -768,8 +764,8 @@ TERMINAL BLOCK 6.35MM 2POS PCB
 <wire x1="-1.473" y1="-0.983" x2="-1.473" y2="0.983" width="0.0508" layer="39"/>
 <smd name="1" x="-0.85" y="0" dx="1" dy="1.1" layer="1"/>
 <smd name="2" x="0.85" y="0" dx="1" dy="1.1" layer="1"/>
-<text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
+<text x="0" y="1.016" size="1.016" layer="25" ratio="21" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.016" size="1.016" layer="27" ratio="21" align="top-center">&gt;VALUE</text>
 <rectangle x1="0.4318" y1="-0.4318" x2="0.8382" y2="0.4318" layer="51"/>
 <rectangle x1="-0.8382" y1="-0.4318" x2="-0.4318" y2="0.4318" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
@@ -928,10 +924,8 @@ Digikey 3557-2K-ND</description>
 (Reference LTC DWG # 05-08-1669)&lt;br&gt;
 Source: http://www.linear.com .. 4062fa.pdf</description>
 <wire x1="-1.4" y1="-1.4" x2="-1.4" y2="1.4" width="0.2032" layer="21"/>
-<wire x1="-1.4" y1="1.4" x2="1.4" y2="1.4" width="0.2032" layer="51"/>
 <wire x1="1.4" y1="1.4" x2="1.4" y2="-1.4" width="0.2032" layer="21"/>
-<wire x1="1.4" y1="-1.4" x2="-1.4" y2="-1.4" width="0.2032" layer="51"/>
-<circle x="-0.75" y="-0.775" radius="0.275" width="0" layer="51"/>
+<circle x="-1.893" y="-1.283" radius="0.275" width="0" layer="51"/>
 <smd name="EXP" x="0" y="0" dx="2.38" dy="1.65" layer="1"/>
 <smd name="1" x="-1" y="-1.35" dx="0.25" dy="0.45" layer="1" roundness="25"/>
 <smd name="2" x="-0.5" y="-1.35" dx="0.25" dy="0.45" layer="1" roundness="25"/>
@@ -1087,22 +1081,12 @@ body 3.9 mm/JEDEC MS-012AC</description>
 <package name="CAP-SUPER-AXIAL-10MM">
 <description>&lt;b&gt;SUPERCAP&lt;/b&gt;&lt;p&gt;
 grid 10 mm, diameter 10.5 mm</description>
-<wire x1="-1.143" y1="0" x2="-0.889" y2="0" width="0.2032" layer="21"/>
-<wire x1="-0.889" y1="0" x2="-0.889" y2="-1.143" width="0.2032" layer="21"/>
-<wire x1="-0.889" y1="-1.143" x2="-0.254" y2="-1.143" width="0.2032" layer="21"/>
-<wire x1="-0.254" y1="-1.143" x2="-0.254" y2="1.143" width="0.2032" layer="21"/>
-<wire x1="-0.254" y1="1.143" x2="-0.889" y2="1.143" width="0.2032" layer="21"/>
-<wire x1="-0.889" y1="1.143" x2="-0.889" y2="0" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="0" x2="1.143" y2="0" width="0.2032" layer="21"/>
-<wire x1="1.143" y1="0" x2="4.191" y2="0" width="0.2032" layer="51"/>
-<wire x1="-4.191" y1="0" x2="-1.143" y2="0" width="0.2032" layer="51"/>
 <circle x="0" y="0" radius="5.08" width="0.2032" layer="21"/>
 <pad name="+" x="-5" y="0" drill="1.016" diameter="2.54"/>
 <pad name="-" x="5" y="0" drill="1.016" diameter="2.54" shape="square"/>
-<text x="-2.667" y="1.4732" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.8702" y="-2.7178" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="0.254" y1="-1.143" x2="0.889" y2="1.143" layer="21"/>
-<wire x1="4.191" y1="1.905" x2="3.429" y2="1.905" width="0.254" layer="21"/>
+<text x="-5.207" y="1.4732" size="1.016" layer="25" ratio="21" align="bottom-right">&gt;NAME</text>
+<text x="-5.1562" y="-1.7018" size="1.016" layer="27" ratio="21" align="top-right">&gt;VALUE</text>
+<wire x1="6.096" y1="2.159" x2="5.334" y2="2.159" width="0.381" layer="21"/>
 </package>
 <package name="JST-B4B-XH-VERT">
 <wire x1="-6.3" y1="-2.35" x2="-6.3" y2="3.4" width="0.2032" layer="21"/>
@@ -1123,7 +1107,7 @@ grid 10 mm, diameter 10.5 mm</description>
 <pad name="1" x="3.75" y="0" drill="1" diameter="1.778" shape="square"/>
 <text x="-6.65" y="-2.2" size="1.27" layer="25" rot="R90">&gt;Name</text>
 <text x="-6.3" y="-3.9" size="1.27" layer="27">&gt;Value</text>
-<circle x="5.5" y="-1.6" radius="0.4472125" width="0.3048" layer="21"/>
+<circle x="5.5" y="-3.251" radius="0.4472125" width="0.3048" layer="21"/>
 </package>
 <package name="BOARD-DISP-ADAFRUIT-OLED-1.5">
 <pad name="MOSI" x="-12.7" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
@@ -1606,179 +1590,161 @@ design rules under a new name.</description>
 <elements>
 <element name="A1" library="TI-CC3200" package="CC3200-LAUNCHXL-BOOSTERPACK" value="CC3200-LAUNCHXL-BOOSTERPACK" x="53.34" y="38.1" smashed="yes"/>
 <element name="PANEL" library="holla" package="OSTT702" value="" x="29.845" y="85.725" smashed="yes" rot="R180">
-<attribute name="NAME" x="19.939" y="84.328" size="1" layer="25" ratio="22" rot="R90"/>
+<attribute name="NAME" x="19.939" y="84.328" size="1.016" layer="25" ratio="21" rot="R90"/>
 <attribute name="VALUE" x="33.02" y="80.645" size="1" layer="27" ratio="11" rot="R180"/>
 </element>
 <element name="Q1" library="holla" package="1984620" value="1984620" x="5.08" y="93.98" smashed="yes" rot="R270">
-<attribute name="NAME" x="8.5955" y="94.043" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="1.7375" y="83.375" size="1.27" layer="27" font="vector"/>
+<attribute name="NAME" x="8.5955" y="94.043" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="1.7375" y="83.375" size="1.016" layer="27" font="vector" ratio="21"/>
 </element>
 <element name="Q2" library="holla" package="1984620" value="1984620" x="5.08" y="82.55" smashed="yes" rot="R270">
-<attribute name="NAME" x="8.5955" y="82.613" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="1.7375" y="71.945" size="1.27" layer="27" font="vector"/>
+<attribute name="NAME" x="8.5955" y="82.613" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="1.7375" y="71.945" size="1.016" layer="27" font="vector" ratio="21"/>
 </element>
 <element name="Q3" library="holla" package="1984620" value="1984620" x="5.08" y="71.12" smashed="yes" rot="R270">
-<attribute name="NAME" x="8.5955" y="71.183" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="1.7375" y="60.515" size="1.27" layer="27" font="vector"/>
+<attribute name="NAME" x="8.5955" y="71.183" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="1.7375" y="60.515" size="1.016" layer="27" font="vector" ratio="21"/>
 </element>
 <element name="Q4" library="holla" package="1984620" value="1984620" x="5.08" y="59.69" smashed="yes" rot="R270">
-<attribute name="NAME" x="8.5955" y="60.007" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="1.7375" y="49.085" size="1.27" layer="27" font="vector"/>
+<attribute name="NAME" x="8.5955" y="60.007" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="1.7375" y="49.085" size="1.016" layer="27" font="vector" ratio="21"/>
 </element>
 <element name="Q5" library="holla" package="1984620" value="1984620" x="5.08" y="48.26" smashed="yes" rot="R270">
-<attribute name="NAME" x="8.5955" y="48.323" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="1.7375" y="37.655" size="1.27" layer="27" font="vector"/>
+<attribute name="NAME" x="8.5955" y="48.323" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="1.7375" y="37.655" size="1.016" layer="27" font="vector" ratio="21"/>
 </element>
 <element name="Q6" library="holla" package="1984620" value="1984620" x="5.08" y="36.83" smashed="yes" rot="R270">
-<attribute name="NAME" x="8.5955" y="36.893" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="1.7375" y="26.225" size="1.27" layer="27" font="vector"/>
+<attribute name="NAME" x="8.5955" y="36.893" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="1.7375" y="26.225" size="1.016" layer="27" font="vector" ratio="21"/>
 </element>
 <element name="Q7" library="holla" package="1984620" value="1984620" x="5.08" y="25.4" smashed="yes" rot="R270">
-<attribute name="NAME" x="8.5955" y="25.463" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="1.7375" y="14.795" size="1.27" layer="27" font="vector"/>
+<attribute name="NAME" x="8.5955" y="25.463" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="1.7375" y="14.795" size="1.016" layer="27" font="vector" ratio="21"/>
 </element>
 <element name="Q8" library="holla" package="1984620" value="1984620" x="5.08" y="13.97" smashed="yes" rot="R270">
-<attribute name="NAME" x="8.5955" y="14.795" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="1.7375" y="3.365" size="1.27" layer="27" font="vector"/>
+<attribute name="NAME" x="8.5955" y="14.795" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="1.7375" y="3.365" size="1.016" layer="27" font="vector" ratio="21"/>
 </element>
 <element name="U1" library="holla" package="SOIC08" value="20" x="22.225" y="69.85" smashed="yes" rot="R270">
-<attribute name="VALUE" x="20.193" y="65.659" size="1" layer="27" ratio="22"/>
-<attribute name="NAME" x="20.32" y="72.771" size="1" layer="25" ratio="22"/>
+<attribute name="VALUE" x="20.193" y="65.659" size="1.016" layer="27" ratio="21"/>
+<attribute name="NAME" x="20.32" y="72.771" size="1.016" layer="25" ratio="21"/>
 </element>
 <element name="C1" library="holla" package="C0603" value=".1u" x="27.94" y="68.072" smashed="yes" rot="R270">
-<attribute name="NAME" x="28.829" y="69.215" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="26.035" y="68.707" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="28.829" y="69.215" size="1.016" layer="25" ratio="21" rot="R270"/>
+<attribute name="VALUE" x="26.035" y="68.707" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
 <element name="R1" library="holla" package="R0603" value="33k" x="23.495" y="79.375" smashed="yes" rot="R270">
-<attribute name="NAME" x="23.114" y="76.454" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="21.59" y="80.01" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="23.114" y="76.454" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="21.59" y="80.01" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
 <element name="R2" library="holla" package="R0603" value="1K" x="26.035" y="79.375" smashed="yes" rot="R90">
-<attribute name="NAME" x="25.273" y="76.454" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="27.94" y="78.74" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="25.273" y="76.454" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="27.94" y="78.74" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="C2" library="holla" package="C0603" value="10n" x="28.575" y="79.375" smashed="yes" rot="R270">
-<attribute name="NAME" x="27.813" y="76.454" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="26.67" y="80.01" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="27.813" y="76.454" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="26.67" y="80.01" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
 <element name="VPANEL" library="holla" package="TPTHRU" value="" x="19.05" y="74.295" smashed="yes">
 <attribute name="DNP" value="1" x="19.05" y="74.295" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="17.78" y="75.565" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="17.78" y="75.565" size="1.016" layer="25" ratio="21"/>
 </element>
 <element name="C4" library="holla" package="C0603" value=".1u" x="25.4" y="74.295" smashed="yes" rot="R90">
-<attribute name="NAME" x="27.559" y="73.152" size="1" layer="25" ratio="22" rot="R90"/>
-<attribute name="VALUE" x="27.305" y="73.66" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="27.559" y="73.152" size="1.016" layer="25" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="27.305" y="73.66" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="C3" library="holla" package="C0603" value=".1u" x="45.085" y="63.5" smashed="yes" rot="R90">
-<attribute name="NAME" x="44.577" y="65.278" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="46.99" y="62.865" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="45.212" y="65.151" size="1.016" layer="25" ratio="21" align="bottom-center"/>
+<attribute name="VALUE" x="45.847" y="63.5" size="1.016" layer="27" ratio="21" rot="R90" align="top-center"/>
 </element>
 <element name="R3" library="holla" package="R0603" value="47K" x="36.83" y="64.135" smashed="yes" rot="R180">
-<attribute name="NAME" x="37.719" y="66.294" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="37.465" y="66.04" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="37.719" y="66.294" size="1.016" layer="25" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="37.465" y="66.04" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
 <element name="R4" library="holla" package="R0603" value="33K" x="36.83" y="59.055" smashed="yes">
-<attribute name="NAME" x="36.195" y="56.896" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="36.195" y="57.15" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="36.195" y="56.896" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="36.195" y="57.15" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R5" library="holla" package="R0603" value="33K" x="44.45" y="59.69" smashed="yes">
-<attribute name="NAME" x="43.688" y="57.658" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="43.815" y="57.785" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="43.688" y="57.658" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="43.815" y="57.785" size="1.016" layer="27" ratio="21"/>
 </element>
-<element name="R7" library="holla" package="R0603" value="1K" x="32.385" y="61.595" smashed="yes" rot="R180">
-<attribute name="NAME" x="33.02" y="60.96" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="33.02" y="63.5" size="1" layer="27" ratio="22" rot="R180"/>
-</element>
+<element name="R7" library="holla" package="R0603" value="1K" x="32.385" y="61.595" rot="R180"/>
 <element name="C5" library="holla" package="C0603" value=".1u" x="36.83" y="61.595" smashed="yes">
-<attribute name="NAME" x="38.735" y="62.103" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="36.195" y="59.69" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="39.751" y="61.087" size="1.016" layer="25" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="36.195" y="59.69" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="U3" library="holla" package="SOT23-6" value="DAC_MCP4725SOT" x="66.548" y="77.343" smashed="yes" rot="R270">
-<attribute name="NAME" x="65.8495" y="79.375" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="66.3575" y="78.2955" size="1" layer="27" ratio="11" rot="R270"/>
+<attribute name="NAME" x="65.8495" y="79.375" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="66.3575" y="78.2955" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
-<element name="C6" library="holla" package="C0603" value=".1u" x="65.278" y="73.533" smashed="yes" rot="R270">
-<attribute name="NAME" x="66.167" y="74.168" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="63.373" y="74.168" size="1" layer="27" ratio="22" rot="R270"/>
-</element>
+<element name="C6" library="holla" package="C0603" value=".1u" x="65.278" y="73.533" rot="R270"/>
 <element name="R8" library="holla" package="R0603" value="4.7K" x="51.562" y="78.105" smashed="yes">
-<attribute name="NAME" x="50.673" y="76.454" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="50.927" y="76.2" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="51.689" y="76.073" size="1.016" layer="25" ratio="21" align="bottom-center"/>
+<attribute name="VALUE" x="51.562" y="77.089" size="1.016" layer="27" ratio="21" align="top-center"/>
 </element>
 <element name="R9" library="holla" package="R0603" value="10K" x="47.752" y="78.105" smashed="yes">
-<attribute name="NAME" x="46.863" y="76.454" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="47.117" y="76.2" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="47.879" y="76.073" size="1.016" layer="25" ratio="21" align="bottom-center"/>
+<attribute name="VALUE" x="47.752" y="77.089" size="1.016" layer="27" ratio="21" align="top-center"/>
 </element>
-<element name="C7" library="holla" package="C0603" value="1u" x="41.529" y="81.407" smashed="yes" rot="R180">
-<attribute name="NAME" x="40.767" y="79.248" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="42.164" y="83.312" size="1" layer="27" ratio="22" rot="R180"/>
-</element>
+<element name="C7" library="holla" package="C0603" value="1u" x="41.529" y="81.407" rot="R180"/>
 <element name="R10" library="holla" package="R0603" value="10K" x="61.595" y="78.105" smashed="yes">
-<attribute name="NAME" x="60.325" y="78.994" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="60.96" y="76.2" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="60.325" y="78.994" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="60.96" y="76.2" size="1.016" layer="27" ratio="21"/>
 </element>
-<element name="C8" library="holla" package="C0603" value=".1u" x="40.64" y="64.135" smashed="yes">
-<attribute name="NAME" x="39.497" y="65.278" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="40.005" y="62.23" size="1" layer="27" ratio="22"/>
-</element>
+<element name="C8" library="holla" package="C0603" value=".1u" x="40.64" y="64.135"/>
 <element name="GND" library="holla" package="TPTHRU" value="" x="36.449" y="88.519" smashed="yes">
 <attribute name="DNP" value="1" x="36.449" y="88.519" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="35.179" y="89.789" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="35.179" y="89.789" size="1.016" layer="25" ratio="21"/>
 </element>
 <element name="U5" library="holla" package="SO08" value="" x="87.63" y="15.875" smashed="yes">
-<attribute name="NAME" x="84.963" y="13.97" size="1" layer="25" ratio="22" rot="R90"/>
+<attribute name="NAME" x="84.963" y="13.97" size="1.016" layer="25" ratio="21" rot="R90"/>
 <attribute name="VALUE" x="91.567" y="13.97" size="1" layer="27" ratio="11" rot="R90"/>
 </element>
 <element name="C9" library="holla" package="C0603" value=".1u" x="92.075" y="13.462" smashed="yes">
-<attribute name="NAME" x="91.186" y="14.605" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="91.44" y="11.557" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="91.186" y="14.605" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="91.44" y="11.557" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R11" library="holla" package="R0603" value="130K" x="18.669" y="15.24" smashed="yes" rot="R270">
-<attribute name="NAME" x="19.304" y="15.875" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="16.764" y="15.875" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="19.431" y="15.24" size="1.016" layer="25" ratio="21" rot="R270" align="bottom-center"/>
+<attribute name="VALUE" x="17.653" y="15.24" size="1.016" layer="27" ratio="21" rot="R270" align="top-center"/>
 </element>
 <element name="R12" library="holla" package="R0603" value="47K" x="24.003" y="15.24" smashed="yes" rot="R90">
-<attribute name="NAME" x="24.638" y="15.875" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="25.908" y="14.605" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="24.892" y="16.637" size="1.016" layer="25" ratio="21" rot="R270"/>
+<attribute name="VALUE" x="25.908" y="14.605" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
-<element name="C10" library="holla" package="C0603" value=".1u" x="21.209" y="15.24" smashed="yes" rot="R270">
-<attribute name="NAME" x="21.844" y="15.875" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="19.304" y="15.875" size="1" layer="27" ratio="22" rot="R270"/>
-</element>
+<element name="C10" library="holla" package="C0603" value=".1u" x="21.209" y="15.24" rot="R270"/>
 <element name="IPANEL" library="holla" package="TPTHRU" value="" x="33.655" y="70.485" smashed="yes">
 <attribute name="DNP" value="1" x="33.655" y="70.485" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="30.861" y="71.755" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="30.861" y="71.755" size="1.016" layer="25" ratio="21"/>
 </element>
 <element name="PHOTOCELL" library="holla" package="1984617" value="1984617" x="18.161" y="7.62" smashed="yes">
-<attribute name="NAME" x="15.9615" y="2.286" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="25.337" y="4.2775" size="1.27" layer="27" font="vector" rot="R90"/>
+<attribute name="NAME" x="15.9615" y="2.286" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="25.337" y="4.2775" size="1.016" layer="27" font="vector" ratio="21" rot="R90"/>
 </element>
-<element name="R13" library="holla" package="R0603" value="47K" x="25.908" y="21.336" smashed="yes" rot="R270">
-<attribute name="NAME" x="27.051" y="22.479" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="24.003" y="21.971" size="1" layer="27" ratio="22" rot="R270"/>
-</element>
+<element name="R13" library="holla" package="R0603" value="47K" x="25.908" y="21.336" rot="R270"/>
 <element name="U9" library="holla" package="IRDETECTOR-THRU" value="IRDETECTOR-THRU" x="86.614" y="33.02" smashed="yes" rot="R270">
-<attribute name="NAME" x="85.8898" y="37.1428" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="85.8898" y="37.1428" size="1.016" layer="25" ratio="21"/>
 </element>
 <element name="1WIRE" library="holla" package="1984620" value="1984620" x="62.865" y="7.62" smashed="yes">
-<attribute name="NAME" x="64.4755" y="2.286" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="73.47" y="4.2775" size="1.27" layer="27" font="vector" rot="R90"/>
+<attribute name="NAME" x="64.4755" y="2.286" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="73.47" y="4.2775" size="1.016" layer="27" font="vector" ratio="21" rot="R90"/>
 </element>
 <element name="R24" library="holla" package="R0603" value="1K" x="65.532" y="12.7" smashed="yes" rot="R180">
-<attribute name="NAME" x="64.389" y="13.589" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="66.167" y="14.605" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="64.389" y="13.589" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="66.167" y="14.605" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
 <element name="D10" library="holla" package="LED0805" value="BLUE" x="35.56" y="7.62" smashed="yes" rot="R270">
-<attribute name="NAME" x="30.734" y="7.112" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="34.29" y="5.08" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="30.734" y="7.112" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="34.29" y="5.08" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R25" library="holla" package="R0603" value="100" x="35.56" y="10.16" smashed="yes">
-<attribute name="NAME" x="30.607" y="9.779" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="34.925" y="8.255" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="30.607" y="9.779" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="34.925" y="8.255" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="DACOUT" library="holla" package="TPTHRU" value="" x="62.23" y="75.565" smashed="yes" rot="R270">
 <attribute name="DNP" value="1" x="62.23" y="75.565" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="59.055" y="73.406" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="59.055" y="73.406" size="1.016" layer="25" ratio="21"/>
 </element>
 <element name="JP1" library="holla" package="MICRO-FIDUCIAL" value="FIDUCIALUFIDUCIAL" x="6.35" y="2.54" smashed="yes">
 <attribute name="DNP" value="1" x="6.35" y="2.54" size="1.778" layer="27" display="off"/>
@@ -1787,268 +1753,260 @@ design rules under a new name.</description>
 <attribute name="DNP" value="1" x="91.44" y="96.52" size="1.778" layer="27" display="off"/>
 </element>
 <element name="F1" library="holla" package="3557-2" value="FUSE-HOLDER-3557-2" x="13.97" y="77.47" smashed="yes" rot="R90">
-<attribute name="NAME" x="14.986" y="88.646" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="19.05" y="68.58" size="1" layer="27" ratio="11" rot="R90"/>
+<attribute name="NAME" x="14.986" y="88.646" size="1.016" layer="25" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="19.05" y="68.58" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="D2" library="holla" package="SOD-323" value="2.0" x="31.115" y="79.375" smashed="yes" rot="R90">
-<attribute name="NAME" x="30.353" y="76.2" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="32.639" y="77.851" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="30.353" y="76.454" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="32.639" y="77.851" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="D3" library="holla" package="SOD-323" value="2.0" x="32.385" y="64.135" smashed="yes" rot="R180">
-<attribute name="NAME" x="34.29" y="63.246" size="1" layer="25" font="vector" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="33.909" y="65.659" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="33.401" y="66.04" size="1.016" layer="25" font="vector" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="33.909" y="65.659" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
 <element name="D4" library="holla" package="SOD-323" value="2.0" x="15.875" y="15.24" smashed="yes" rot="R90">
-<attribute name="NAME" x="14.986" y="13.335" size="1" layer="25" font="vector" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="17.399" y="13.716" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="14.986" y="13.335" size="1.016" layer="25" font="vector" ratio="21" rot="R270"/>
+<attribute name="VALUE" x="17.399" y="13.716" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="D1" library="holla" package="SOD-323" value="56.0" x="19.05" y="78.74" smashed="yes" rot="R270">
-<attribute name="NAME" x="19.939" y="80.645" size="1" layer="25" font="vector" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="17.526" y="80.264" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="20.066" y="79.629" size="1.016" layer="25" font="vector" ratio="21" rot="R270"/>
+<attribute name="VALUE" x="17.526" y="80.264" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
 <element name="D11" library="holla" package="SOT23-3" value="2.048" x="40.64" y="60.325" smashed="yes" rot="R180">
-<attribute name="VALUE" x="42.037" y="58.547" size="1" layer="27" ratio="22" rot="R180"/>
-<attribute name="NAME" x="42.037" y="58.547" size="1" layer="25" ratio="22" rot="R180"/>
+<attribute name="VALUE" x="42.037" y="58.547" size="1.016" layer="27" ratio="21" rot="R180"/>
+<attribute name="NAME" x="42.037" y="58.547" size="1.016" layer="25" ratio="21" rot="R180"/>
 </element>
-<element name="U6" library="holla" package="DFN10-3X3" value="" x="19.05" y="50.165" smashed="yes" rot="R180">
-<attribute name="NAME" x="22.606" y="51.689" size="1" layer="25" ratio="22" rot="R180"/>
+<element name="U6" library="holla" package="DFN10-3X3" value="BATTCHARGER-LTC4079" x="19.05" y="50.165" smashed="yes" rot="R180">
+<attribute name="NAME" x="20.828" y="50.8" size="1.016" layer="25" ratio="21" rot="R270"/>
 <attribute name="VALUE" x="20.955" y="53.34" size="1" layer="27" ratio="11" rot="R180"/>
 </element>
 <element name="R14" library="holla" package="R0603" value="33K" x="20.32" y="53.975" smashed="yes">
-<attribute name="NAME" x="18.796" y="56.007" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="19.685" y="52.07" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="21.844" y="55.753" size="1.016" layer="25" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="19.685" y="52.07" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R15" library="holla" package="R0603" value="187K" x="19.685" y="46.355" smashed="yes">
-<attribute name="NAME" x="18.288" y="44.45" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="19.05" y="44.45" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="18.288" y="44.45" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="19.05" y="44.45" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R16" library="holla" package="R0603" value="1.78M" x="22.606" y="47.244" smashed="yes" rot="R90">
-<attribute name="NAME" x="25.019" y="45.847" size="1" layer="25" ratio="22" rot="R90"/>
-<attribute name="VALUE" x="24.511" y="46.609" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="25.019" y="45.847" size="1.016" layer="25" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="24.511" y="46.609" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
-<element name="R17" library="holla" package="R0603" value="1.21K" x="16.51" y="53.975" smashed="yes">
-<attribute name="NAME" x="14.478" y="54.356" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="15.875" y="52.07" size="1" layer="27" ratio="22"/>
-</element>
+<element name="R17" library="holla" package="R0603" value="1.21K" x="16.51" y="53.975"/>
 <element name="R18" library="holla" package="R0603" value="33K" x="15.875" y="46.355" smashed="yes" rot="R180">
-<attribute name="NAME" x="17.272" y="45.466" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="16.51" y="48.26" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="14.351" y="46.863" size="1.016" layer="25" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="16.51" y="48.26" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
 <element name="U7" library="holla" package="SO16" value="HC4051" x="17.78" y="22.225" smashed="yes">
-<attribute name="NAME" x="10.795" y="21.336" size="1" layer="25" font="vector" ratio="22"/>
-<attribute name="VALUE" x="13.716" y="21.717" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="10.795" y="21.336" size="1.016" layer="25" font="vector" ratio="21"/>
+<attribute name="VALUE" x="13.716" y="21.717" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R19" library="holla" package="R0603" value="100K" x="10.668" y="13.208" smashed="yes" rot="R90">
-<attribute name="NAME" x="11.557" y="14.986" size="1" layer="25" ratio="22" rot="R90"/>
-<attribute name="VALUE" x="12.573" y="12.573" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="11.557" y="14.986" size="1.016" layer="25" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="12.573" y="12.573" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="R20" library="holla" package="R0603" value="130K" x="15.875" y="34.29" smashed="yes">
-<attribute name="NAME" x="14.732" y="32.639" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="15.24" y="32.385" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="14.732" y="32.639" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="15.24" y="32.385" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R21" library="holla" package="R0603" value="47K" x="15.875" y="29.21" smashed="yes" rot="R180">
-<attribute name="NAME" x="14.732" y="27.559" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="16.51" y="31.115" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="14.732" y="27.559" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="16.51" y="31.115" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
 <element name="C11" library="holla" package="C0603" value=".1u" x="15.875" y="31.75" smashed="yes">
-<attribute name="NAME" x="14.732" y="30.099" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="15.24" y="29.845" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="14.732" y="30.099" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="15.24" y="29.845" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R22" library="holla" package="R0603" value="130K" x="12.065" y="34.29" smashed="yes">
-<attribute name="NAME" x="10.922" y="32.639" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="11.43" y="32.385" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="10.922" y="32.639" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="11.43" y="32.385" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R23" library="holla" package="R0603" value="22k" x="12.065" y="29.21" smashed="yes" rot="R180">
-<attribute name="NAME" x="10.922" y="27.559" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="12.7" y="31.115" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="10.922" y="27.559" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="12.7" y="31.115" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
 <element name="C12" library="holla" package="C0603" value=".1u" x="12.065" y="31.75" smashed="yes">
-<attribute name="NAME" x="10.668" y="30.099" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="11.43" y="29.845" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="10.668" y="30.099" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="11.43" y="29.845" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R26" library="holla" package="R0603" value="100K" x="19.685" y="34.29" smashed="yes">
-<attribute name="NAME" x="18.542" y="32.639" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="19.05" y="32.385" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="18.542" y="32.639" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="19.05" y="32.385" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R27" library="holla" package="R0603" value="10K" x="19.685" y="29.21" smashed="yes" rot="R180">
-<attribute name="NAME" x="18.796" y="27.559" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="20.32" y="31.115" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="18.796" y="27.559" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="20.32" y="31.115" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
 <element name="C13" library="holla" package="C0603" value=".1u" x="19.685" y="31.75" smashed="yes">
-<attribute name="NAME" x="18.542" y="30.099" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="19.05" y="29.845" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="18.542" y="30.099" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="19.05" y="29.845" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R28" library="holla" package="R0603" value="47K" x="11.049" y="19.685" smashed="yes" rot="R90">
-<attribute name="NAME" x="10.16" y="18.542" size="1" layer="25" ratio="22" rot="R90"/>
-<attribute name="VALUE" x="12.954" y="19.05" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="10.16" y="18.542" size="1.016" layer="25" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="12.954" y="19.05" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="R29" library="holla" package="R0603" value="33K" x="13.335" y="13.335" smashed="yes">
-<attribute name="NAME" x="11.938" y="11.176" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="12.7" y="11.43" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="11.938" y="11.176" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="12.7" y="11.43" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="C14" library="holla" package="C0603" value=".1u" x="13.335" y="15.875" smashed="yes" rot="R180">
-<attribute name="NAME" x="12.192" y="16.764" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="13.97" y="17.78" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="12.192" y="16.764" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="13.97" y="17.78" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
 <element name="C15" library="holla" package="C0603" value="1u" x="20.32" y="56.515" smashed="yes" rot="R180">
-<attribute name="NAME" x="21.717" y="56.134" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="20.955" y="58.42" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="20.32" y="58.547" size="1.016" layer="25" ratio="21" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="20.32" y="57.277" size="1.016" layer="27" ratio="21" rot="R180" align="top-center"/>
 </element>
 <element name="C16" library="holla" package="C0603" value="1u" x="20.955" y="65.405" smashed="yes" rot="R90">
-<attribute name="NAME" x="20.32" y="64.77" size="1" layer="25" ratio="22" rot="R90"/>
-<attribute name="VALUE" x="22.86" y="64.77" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="20.193" y="64.135" size="1.016" layer="25" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="22.86" y="64.77" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="C17" library="holla" package="C0805" value="10u,10V" x="20.828" y="61.214" smashed="yes" rot="R270">
-<attribute name="NAME" x="22.098" y="62.484" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="18.288" y="62.484" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="21.971" y="61.722" size="1.016" layer="25" ratio="21" rot="R270"/>
+<attribute name="VALUE" x="18.288" y="62.484" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
-<element name="C18" library="holla" package="C0603" value="1u" x="28.194" y="61.595" smashed="yes">
-<attribute name="NAME" x="27.559" y="62.23" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="27.559" y="59.69" size="1" layer="27" ratio="22"/>
-</element>
+<element name="C18" library="holla" package="C0603" value="1u" x="28.194" y="61.595"/>
 <element name="C19" library="holla" package="C0805" value="10u,10V" x="27.686" y="53.34" smashed="yes">
-<attribute name="NAME" x="26.416" y="54.61" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="26.416" y="50.8" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="26.416" y="54.61" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="26.416" y="50.8" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="U8" library="holla" package="SOT-223" value="LD1117" x="14.732" y="62.23" smashed="yes" rot="R90">
-<attribute name="NAME" x="12.2555" y="64.5795" size="1" layer="25" font="vector" ratio="22" rot="R90"/>
-<attribute name="VALUE" x="20.7645" y="59.055" size="1" layer="27" font="vector" ratio="22" rot="R90"/>
+<attribute name="NAME" x="12.2555" y="64.5795" size="1.016" layer="25" font="vector" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="20.7645" y="59.055" size="1.016" layer="27" font="vector" ratio="21" rot="R90"/>
 </element>
 <element name="U10" library="holla" package="SOT23-5" value="AP2210K-5.0TRG1" x="26.67" y="57.785" smashed="yes" rot="R180">
-<attribute name="NAME" x="28.448" y="59.563" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="23.622" y="59.563" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="28.448" y="59.563" size="1.016" layer="25" ratio="21" rot="R270"/>
+<attribute name="VALUE" x="23.622" y="59.563" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
 <element name="U2" library="holla" package="SO08" value="MC33171" x="38.735" y="70.485" smashed="yes">
-<attribute name="NAME" x="36.068" y="68.58" size="1" layer="25" ratio="22" rot="R90"/>
-<attribute name="VALUE" x="42.672" y="68.58" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="36.068" y="68.58" size="1.016" layer="25" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="42.672" y="68.58" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="U4" library="holla" package="SO08" value="MC33171" x="47.879" y="83.312" smashed="yes" rot="R90">
-<attribute name="NAME" x="49.784" y="80.645" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="49.784" y="87.249" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="49.784" y="80.645" size="1.016" layer="25" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="49.784" y="87.249" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
-<element name="R30" library="holla" package="R0603" value="1K" x="41.529" y="83.947" smashed="yes">
-<attribute name="NAME" x="40.259" y="84.836" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="40.894" y="82.042" size="1" layer="27" ratio="22"/>
-</element>
+<element name="R30" library="holla" package="R0603" value="1K" x="41.529" y="83.947"/>
 <element name="R31" library="holla" package="R0603" value="33K" x="54.61" y="76.581" smashed="yes" rot="R270">
-<attribute name="NAME" x="55.118" y="74.803" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="52.705" y="77.216" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="56.134" y="79.248" size="1.016" layer="25" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="52.705" y="77.216" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
 <element name="D5" library="holla" package="SOT23-3" value="2.048" x="55.753" y="72.263" smashed="yes" rot="R90">
-<attribute name="VALUE" x="53.975" y="70.866" size="1" layer="27" ratio="22" rot="R90"/>
-<attribute name="NAME" x="58.42" y="71.501" size="1" layer="25" ratio="22" rot="R180"/>
+<attribute name="VALUE" x="53.975" y="70.866" size="1.016" layer="27" ratio="21" rot="R90"/>
+<attribute name="NAME" x="58.42" y="71.501" size="1.016" layer="25" ratio="21" rot="R180"/>
 </element>
 <element name="R32" library="holla" package="R0603" value="33K" x="52.324" y="72.263" smashed="yes" rot="R270">
-<attribute name="NAME" x="50.165" y="73.66" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="50.419" y="72.898" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="51.435" y="72.263" size="1.016" layer="25" ratio="21" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="51.308" y="72.263" size="1.016" layer="27" ratio="21" rot="R270" align="top-center"/>
 </element>
 <element name="C20" library="holla" package="C0603" value=".1u" x="57.15" y="76.581" smashed="yes" rot="R90">
-<attribute name="NAME" x="58.166" y="74.803" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="59.055" y="75.946" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="58.928" y="79.248" size="1.016" layer="25" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="59.055" y="75.946" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="C21" library="holla" package="C0603" value=".1u" x="11.049" y="24.003" smashed="yes" rot="R270">
-<attribute name="NAME" x="9.144" y="24.892" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="9.144" y="24.638" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="9.144" y="24.892" size="1.016" layer="25" ratio="21" rot="R270"/>
+<attribute name="VALUE" x="9.144" y="24.638" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
 <element name="C22" library="holla" package="C0603" value=".1u" x="91.186" y="28.702" smashed="yes">
-<attribute name="NAME" x="89.789" y="26.543" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="90.551" y="26.797" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="89.789" y="26.543" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="90.551" y="26.797" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="C23" library="holla" package="C0603" value="1u" x="73.66" y="8.255" smashed="yes" rot="R90">
-<attribute name="NAME" x="75.819" y="6.858" size="1" layer="25" ratio="22" rot="R90"/>
-<attribute name="VALUE" x="75.565" y="7.62" size="1" layer="27" ratio="22" rot="R90"/>
+<attribute name="NAME" x="75.819" y="6.858" size="1.016" layer="25" ratio="21" rot="R90"/>
+<attribute name="VALUE" x="75.565" y="7.62" size="1.016" layer="27" ratio="21" rot="R90"/>
 </element>
 <element name="U11" library="holla" package="MSOP8" value="RTC-DS1339A" x="83.82" y="74.295" smashed="yes" rot="R90">
-<attribute name="NAME" x="86.848" y="72.317" size="1" layer="25" ratio="22" rot="R180"/>
-<attribute name="VALUE" x="85.432" y="77.123" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="87.376" y="72.517" size="1.016" layer="25" ratio="21" rot="R180"/>
+<attribute name="VALUE" x="85.432" y="77.123" size="1.016" layer="27" ratio="21" rot="R180"/>
 </element>
-<element name="C24" library="holla" package="C0603" value=".1u" x="82.804" y="70.485" smashed="yes">
-<attribute name="NAME" x="81.661" y="68.326" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="82.169" y="68.58" size="1" layer="27" ratio="22"/>
-</element>
+<element name="C24" library="holla" package="C0603" value=".1u" x="82.804" y="70.485"/>
 <element name="Y1" library="holla" package="ABS25" value="32.768KHz" x="92.075" y="73.66" smashed="yes">
-<attribute name="NAME" x="88.392" y="76.2" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="88.392" y="69.85" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="88.392" y="76.2" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="88.392" y="69.85" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="C25" library="holla" package="CAP-SUPER-AXIAL-10MM" value="0.33F" x="90.805" y="82.55" smashed="yes">
-<attribute name="NAME" x="83.058" y="84.0232" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="87.9348" y="79.8322" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="83.058" y="84.0232" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="87.9348" y="79.8322" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="BATT" library="holla" package="JST-B4B-XH-VERT" value="" x="15.875" y="41.275" smashed="yes" rot="R180">
-<attribute name="NAME" x="9.865" y="44.115" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="11.262" y="43.988" size="1.016" layer="25" ratio="21"/>
 <attribute name="VALUE" x="22.175" y="45.175" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="DISP1" library="holla" package="BOARD-DISP-ADAFRUIT-OLED-1.5" value="" x="53.34" y="55.245" smashed="yes">
-<attribute name="NAME" x="67.2338" y="53.2638" size="1" layer="25" ratio="22" align="top-right"/>
+<attribute name="NAME" x="67.2338" y="53.2638" size="1.016" layer="25" ratio="21" align="top-right"/>
 </element>
 <element name="TP1" library="holla" package="TP0.5R" value="" x="17.145" y="36.83" smashed="yes" rot="R90">
 <attribute name="DNP" value="1" x="17.145" y="36.83" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="18.923" y="35.052" size="1" layer="25" ratio="22" rot="R90"/>
+<attribute name="NAME" x="18.923" y="35.052" size="1.016" layer="25" ratio="21" rot="R90"/>
 <attribute name="VALUE" x="18.161" y="37.846" size="1.016" layer="27" rot="R90"/>
 </element>
 <element name="TP2" library="holla" package="TP0.5R" value="" x="14.605" y="36.83" smashed="yes" rot="R90">
 <attribute name="DNP" value="1" x="14.605" y="36.83" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="16.383" y="35.052" size="1" layer="25" ratio="22" rot="R90"/>
+<attribute name="NAME" x="16.383" y="35.052" size="1.016" layer="25" ratio="21" rot="R90"/>
 <attribute name="VALUE" x="15.621" y="37.846" size="1.016" layer="27" rot="R90"/>
 </element>
 <element name="TP3" library="holla" package="TP0.5R" value="" x="12.065" y="36.83" smashed="yes" rot="R90">
 <attribute name="DNP" value="1" x="12.065" y="36.83" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="13.843" y="35.052" size="1" layer="25" ratio="22" rot="R90"/>
+<attribute name="NAME" x="13.843" y="35.052" size="1.016" layer="25" ratio="21" rot="R90"/>
 <attribute name="VALUE" x="13.081" y="37.846" size="1.016" layer="27" rot="R90"/>
 </element>
-<element name="R6" library="holla" package="R0603" value="10K" x="59.436" y="64.77" smashed="yes">
-<attribute name="NAME" x="58.039" y="65.913" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="58.801" y="62.865" size="1" layer="27" ratio="22"/>
-</element>
+<element name="R6" library="holla" package="R0603" value="10K" x="59.436" y="64.77"/>
 <element name="R33" library="holla" package="R0603" value="10K" x="67.056" y="64.77" smashed="yes" rot="R180">
-<attribute name="NAME" x="65.913" y="65.659" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="67.691" y="66.675" size="1" layer="27" ratio="22" rot="R180"/>
+<attribute name="NAME" x="67.183" y="66.802" size="1.016" layer="25" ratio="21" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="67.056" y="65.786" size="1.016" layer="27" ratio="21" rot="R180" align="top-center"/>
 </element>
 <element name="SCL" library="holla" package="TPTHRU" value="" x="59.182" y="61.214" smashed="yes">
 <attribute name="DNP" value="1" x="59.182" y="61.214" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="58.166" y="58.928" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="58.166" y="58.928" size="1.016" layer="25" ratio="21"/>
 </element>
 <element name="SDA" library="holla" package="TPTHRU" value="" x="67.818" y="61.214" smashed="yes">
 <attribute name="DNP" value="1" x="67.818" y="61.214" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="66.548" y="58.928" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="66.548" y="58.928" size="1.016" layer="25" ratio="21"/>
 </element>
 <element name="C26" library="holla" package="C0603" value=".1u" x="37.084" y="43.434" smashed="yes">
-<attribute name="NAME" x="38.989" y="43.053" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="36.449" y="41.529" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="38.989" y="43.053" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="36.449" y="41.529" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="U12" library="holla" package="IRDETECTOR-TSOP6X" value="IRDETECTOR-TSOP6X" x="93.98" y="33.782" smashed="yes" rot="R90">
-<attribute name="NAME" x="90.043" y="37.719" size="1" layer="21" ratio="22"/>
+<attribute name="NAME" x="90.043" y="37.719" size="1.016" layer="21" ratio="21"/>
 </element>
 <element name="TC-K" library="holla" package="1984617" value="" x="84.582" y="7.62" smashed="yes">
-<attribute name="NAME" x="85.3035" y="2.286" size="1" layer="25" font="vector" ratio="22"/>
+<attribute name="NAME" x="85.3035" y="2.286" size="1.016" layer="25" font="vector" ratio="21"/>
 <attribute name="VALUE" x="91.758" y="4.2775" size="1.27" layer="27" font="vector" rot="R90"/>
 </element>
 <element name="JP3" library="holla" package="1X05" value="" x="75.692" y="67.564" smashed="yes" rot="R90">
-<attribute name="NAME" x="74.4728" y="64.8208" size="1" layer="25" ratio="22"/>
+<attribute name="NAME" x="74.4728" y="64.8208" size="1.016" layer="25" ratio="21"/>
 <attribute name="VALUE" x="78.867" y="66.294" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R34" library="holla" package="R0603" value="10K" x="85.217" y="26.289" smashed="yes">
-<attribute name="NAME" x="83.947" y="27.305" size="1" layer="25" ratio="22"/>
-<attribute name="VALUE" x="84.582" y="24.384" size="1" layer="27" ratio="22"/>
+<attribute name="NAME" x="83.947" y="27.305" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="84.582" y="24.384" size="1.016" layer="27" ratio="21"/>
 </element>
 <element name="R35" library="holla" package="R0603" value="10K" x="75.946" y="82.296" smashed="yes" rot="R270">
-<attribute name="NAME" x="76.962" y="83.693" size="1" layer="25" ratio="22" rot="R270"/>
-<attribute name="VALUE" x="74.041" y="82.931" size="1" layer="27" ratio="22" rot="R270"/>
+<attribute name="NAME" x="76.962" y="83.693" size="1.016" layer="25" ratio="21" rot="R270"/>
+<attribute name="VALUE" x="74.041" y="82.931" size="1.016" layer="27" ratio="21" rot="R270"/>
 </element>
-<element name="STRING" library="holla" package="OSTT702" value="" x="-18.923" y="-8.636"/>
-<element name="K1" library="holla" package="RELAY-1FORMC-5MM-16A" value="" x="0.127" y="-27.305">
+<element name="STRING" library="holla" package="OSTT702" value="" x="-18.923" y="-8.636" smashed="yes">
+<attribute name="NAME" x="-22.098" y="-18.161" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="-22.098" y="-3.556" size="1.27" layer="27"/>
+</element>
+<element name="K1" library="holla" package="RELAY-1FORMC-5MM-16A" value="" x="0.127" y="-27.305" smashed="yes">
 <attribute name="OC_NEWARK" value="unknown" x="0.127" y="-27.305" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="0.127" y="-27.305" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="0.127" y="-27.305" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="0.127" y="-27.305" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-22.033" y="-20.465" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="7.317" y="-20.575" size="1.27" layer="27" align="bottom-right"/>
 </element>
-<element name="IC1" library="microchip" package="QFN28-ML_6X6MM" value="MCP23017ML" x="-27.051" y="-28.702">
+<element name="IC1" library="microchip" package="QFN28-ML_6X6MM" value="MCP23017ML" x="-27.051" y="-28.702" smashed="yes">
 <attribute name="OC_NEWARK" value="31K2957" x="-27.051" y="-28.702" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="MCP23017-E/ML" x="-27.051" y="-28.702" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="MICROCHIP" x="-27.051" y="-28.702" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="-27.051" y="-28.702" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-30.226" y="-25.527" size="1.016" layer="25" ratio="21"/>
+<attribute name="VALUE" x="-30.226" y="-33.147" size="1.016" layer="27" ratio="21"/>
 </element>
-<element name="LOGO1" library="holla" package="LOGO-OSHW-L" value="LOGO-OSHWL" x="67.564" y="88.646"/>
+<element name="LOGO1" library="holla" package="LOGO-OSHW-L" value="LOGO-OSHWL" x="67.564" y="88.9" smashed="yes"/>
 </elements>
 <signals>
 <signal name="I2C_SCL">
