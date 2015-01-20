@@ -7646,7 +7646,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <part name="GND1" library="holla" deviceset="GND" device=""/>
 <part name="GND2" library="holla" deviceset="GND" device=""/>
 <part name="C1" library="holla" deviceset="C" device="-USC0603" value=".1u"/>
-<part name="R1" library="holla" deviceset="R" device="-US_R0603" value="33k"/>
+<part name="R1" library="holla" deviceset="R" device="-US_R0603" value="33K"/>
 <part name="R2" library="holla" deviceset="R" device="-US_R0603" value="1K"/>
 <part name="C2" library="holla" deviceset="C" device="-USC0603" value="10n"/>
 <part name="VPANEL" library="holla" deviceset="TESTPOINT" device="THRU" value=""/>
@@ -7754,7 +7754,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <part name="GND25" library="holla" deviceset="GND" device=""/>
 <part name="C24" library="holla" deviceset="C" device="-USC0603" value=".1u"/>
 <part name="GND26" library="holla" deviceset="GND" device=""/>
-<part name="Y1" library="holla" deviceset="CRYSTAL32-SMD" device="ABS25" value="32.768KHz"/>
+<part name="Y1" library="holla" deviceset="CRYSTAL32-SMD" device="ABS25" value="32.768KHz-6pF"/>
 <part name="C25" library="holla" deviceset="C" device="-SUPER-10MM" value="0.33F"/>
 <part name="BATT" library="holla" deviceset="M04" device="-B4B-XH-VERT"/>
 <part name="GND27" library="holla" deviceset="GND" device=""/>
@@ -7992,7 +7992,7 @@ AMUX Select</text>
 <label x="248.92" y="182.88" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="1WIRE" class="0">
+<net name="ONEWIRE" class="0">
 <segment>
 <pinref part="A1" gate="G$1" pin="P$11"/>
 <wire x1="246.38" y1="162.56" x2="248.92" y2="162.56" width="0.1524" layer="91"/>
@@ -8950,7 +8950,7 @@ here</text>
 <junction x="111.76" y="30.48"/>
 </segment>
 </net>
-<net name="1WIRE" class="0">
+<net name="ONEWIRE" class="0">
 <segment>
 <pinref part="1WIRE" gate="G$1" pin="2"/>
 <wire x1="238.76" y1="127" x2="251.46" y2="127" width="0.1524" layer="91"/>
@@ -9249,7 +9249,7 @@ here</text>
 <label x="27.94" y="63.5" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="V3.3SCALED" class="0">
+<net name="V3P3SCALED" class="0">
 <segment>
 <pinref part="U7" gate="G$1" pin="Y4"/>
 <wire x1="144.78" y1="109.22" x2="139.7" y2="109.22" width="0.1524" layer="91"/>
