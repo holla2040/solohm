@@ -1,5 +1,9 @@
 #include "solohm.h"
 
+#define VBATT1SCALE  4.136/3057.0
+#define VBATT2SCALE  8.279/3351.0
+#define VBATT3SCALE 12.413/3130.0
+
 int amuxRead(uint8_t channel) {
   switch (channel) {
   case DAYSENSORSCALED:      
@@ -33,6 +37,7 @@ int amuxRead(uint8_t channel) {
     digitalWrite(AMUXS2,1);
     break;
   }
+  delay(100);
   return analogRead(AMUXOUT);
 }
 
@@ -41,6 +46,7 @@ void setup() {
   pinMode(VPANELSCALED,INPUT);
   pinMode(IPANELSCALED,INPUT);
   pinMode(AMUXOUT,INPUT);
+  
   pinMode(AMUXS0,OUTPUT);
   pinMode(AMUXS1,OUTPUT);
   pinMode(AMUXS2,OUTPUT);
@@ -49,6 +55,8 @@ void setup() {
 
 void loop() {
   int v;
+  float voltage;
+/*
   v = analogRead(VPANELSCALED);
   Serial.print("VPANELSCALED    ");
   Serial.println(v,DEC);
@@ -60,20 +68,28 @@ void loop() {
   v = amuxRead(DAYSENSORSCALED);
   Serial.print("DAYSENSORSCALED ");
   Serial.println(v,DEC);
+*/
 
-  v = amuxRead(VBATT1SCALED);
+
+ v = amuxRead(VBATT1SCALED);
   Serial.print("VBATT1SCALED    ");
-  Serial.println(v,DEC);
+  voltage = v * VBATT1SCALE;
+  Serial.println(voltage,2);
+
+
 
   v = amuxRead(VBATT2SCALED);
   Serial.print("VBATT2SCALED    ");
-  Serial.println(v,DEC);
+    voltage = v * VBATT2SCALE;
+  Serial.println(voltage,2);
 
   v = amuxRead(VBATT3SCALED);
   Serial.print("VBATT3SCALED    ");
-  Serial.println(v,DEC);
+  voltage = v * VBATT3SCALE;
+  Serial.println(voltage,2);
 
 
+/*
   v = amuxRead(V3P3SCALED);
   Serial.print("V3P3SCALED      ");
   Serial.println(v,DEC);
@@ -81,8 +97,9 @@ void loop() {
   v = amuxRead(V5SWSCALED);
   Serial.print("V5SWSCALED      ");
   Serial.println(v,DEC);
+*/
 
   Serial.println();
-  delay(1000);
+  delay(900);
 }
 
