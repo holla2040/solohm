@@ -3,6 +3,12 @@
 #define VBATT1SCALE  4.136/3057.0
 #define VBATT2SCALE  8.279/3351.0
 #define VBATT3SCALE 12.413/3130.0
+#define V3P3SCALE    3.32/3836.0
+#define V5SCALE      5.00/3712.0
+#define VPANELSCALE 25.44/2081.0
+#define IPANELM     -0.0025316
+#define IPANELB      9.6075949
+
 
 int amuxRead(uint8_t channel) {
   switch (channel) {
@@ -46,60 +52,64 @@ void setup() {
   pinMode(VPANELSCALED,INPUT);
   pinMode(IPANELSCALED,INPUT);
   pinMode(AMUXOUT,INPUT);
-  
+
   pinMode(AMUXS0,OUTPUT);
   pinMode(AMUXS1,OUTPUT);
   pinMode(AMUXS2,OUTPUT);
+  pinMode(V5SWENABLE,OUTPUT);
+  digitalWrite(V5SWENABLE,1);
+
   Serial.println("solohm_adc begin");
 }
 
 void loop() {
-  int v;
-  float voltage;
-/*
-  v = analogRead(VPANELSCALED);
+  int adc;
+  float value;
+
+  adc = analogRead(VPANELSCALED);
   Serial.print("VPANELSCALED    ");
-  Serial.println(v,DEC);
+  value = adc * VPANELSCALE;
+  Serial.println(value,2);
 
-  v = analogRead(IPANELSCALED);
+  adc = analogRead(IPANELSCALED);
+  value = IPANELM * adc + IPANELB;
   Serial.print("IPANELSCALED    ");
-  Serial.println(v,DEC);
+  Serial.println(value,2);
 
-  v = amuxRead(DAYSENSORSCALED);
+
+  adc = amuxRead(DAYSENSORSCALED);
   Serial.print("DAYSENSORSCALED ");
-  Serial.println(v,DEC);
-*/
+  Serial.println(adc,DEC);
 
 
- v = amuxRead(VBATT1SCALED);
+  adc = amuxRead(VBATT1SCALED);
   Serial.print("VBATT1SCALED    ");
-  voltage = v * VBATT1SCALE;
-  Serial.println(voltage,2);
+  value = adc * VBATT1SCALE;
+  Serial.println(value,2);
 
-
-
-  v = amuxRead(VBATT2SCALED);
+  adc = amuxRead(VBATT2SCALED);
   Serial.print("VBATT2SCALED    ");
-    voltage = v * VBATT2SCALE;
-  Serial.println(voltage,2);
+  value = adc * VBATT2SCALE;
+  Serial.println(value,2);
 
-  v = amuxRead(VBATT3SCALED);
+  adc = amuxRead(VBATT3SCALED);
   Serial.print("VBATT3SCALED    ");
-  voltage = v * VBATT3SCALE;
-  Serial.println(voltage,2);
+  value = adc * VBATT3SCALE;
+  Serial.println(value,2);
 
-
-/*
-  v = amuxRead(V3P3SCALED);
+  adc = amuxRead(V3P3SCALED);
   Serial.print("V3P3SCALED      ");
-  Serial.println(v,DEC);
+  value = adc * V3P3SCALE;
+  Serial.println(value,2);
 
-  v = amuxRead(V5SWSCALED);
+  adc = amuxRead(V5SWSCALED);
   Serial.print("V5SWSCALED      ");
-  Serial.println(v,DEC);
-*/
+  value = adc * V5SCALE;
+  Serial.println(value,2);
 
   Serial.println();
   delay(900);
 }
+
+
 
