@@ -12,19 +12,20 @@ Specifications
 <li>Input voltage - 50VDC maximum</li>
 <li>Input current - 10A maximum, fused</li>
 <li>Input power - 300W maximum</li>
-<li>Operating temperature - < 130F, acquisition electronics TEC cooled</li>
+<li>Operating temperature - &lt; 130F, acquisition electronics TEC cooled</li>
 <li>Display - OLED graphic display</li>
 <li>User interface - IR remote DirectTV RC65X or Sony TV</li> 
 <li>MPPT tracking - periodic sweep, perturb/observe, manual</li>
 <li>Mechanical - frame/poll attachment, IP63, extruded aluminium, glass/plexiglass, passive heatsink</li>
-<li>IV sweep time - < 1 sec, VOC to ISC, 500 samples, Vpanel@ISC < 0.25V@8A<li>
+<li>IV sweep time - &lt; 1 sec, VOC to ISC, 500 samples, Vpanel@ISC < 0.25V@8A<li>
 <li>ADC resolution - 12 bit, 4096 steps full scale</li>
-<li>Temperature probes - COTS stainless steel, multi-drop chain, dynamic configuration</li>
-<li>Power supply - COTS 3S LIPO with panel powered charger, 24 hour operation</li>
+<li>Temperature probes - DS18B20, COTS stainless steel, multi-drop, +/-0.5C over -10C to +85C</li>
+<li>Power supply - COTS 3S LIPO battery, panel powered charger, 24 hour operation</li>
 <li>Data transmission - UDP broadcast and control, HTTP REST</li>
 <li>Data collection - micro SD slot</li>
 <li>Timestamp - UTC via NTP source with battery-backed real time clock</li>
 <li>Firmware - OTA updates (planned)</li>
+<li>Calibration - Requires 40V@10A power supply, precision voltmeter and ammeter</li>
 
 
 
