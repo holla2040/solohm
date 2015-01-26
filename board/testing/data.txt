@@ -1,0 +1,14 @@
+150125
+IRL640A
+    heatsink = delco radio aluminium 
+
+    V = 25.1V
+    I = 1.3084A
+    P = 32.8W
+    T = 99.5C heat sink, 18.5C ambient
+    
+    V = 32.3V
+    I = 1.65A
+    P = 53.3W
+    T = 138.0C heat sink, 19.5C ambient
+

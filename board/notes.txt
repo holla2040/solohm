@@ -14,3 +14,5 @@ consider ditching activity LED if LP LED is sufficient
     make it RED to match or not drill led holes
     
 add big solder holes for solar wire
+
+look at rssi with and without solohm
