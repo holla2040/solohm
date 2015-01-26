@@ -2,6 +2,7 @@
 #define SOLOHM_H 1
 
 #include "../../libraries/Wire/Wire.h"
+#include "../../libraries/WiFi/WiFi.h"
 
 #include <stdint.h>
 
@@ -9,10 +10,21 @@ class SolOhm {
     public:
         SolOhm();
         void setup();
+        void setup(char *ssid, char *password);
+        void setup(char *ssid, char *password, uint16_t port);
+        void dacSet(uint16_t v);
+        float dmmRead(uint8_t channel);
+        void udpBroadcast(char *s);
     private:
         void blah();
         void setRTCRegister(unsigned char registerNumber, unsigned char value);
         uint8_t getRTCRegister(unsigned char registerNumber);
+        uint16_t amuxRead(uint8_t channel);
+        char wifiSSID[50];
+        char wifiPassword[50];
+        uint16_t consolePort;
+        WiFiUDP udp;
+    
 }; 
 
 #define VPANELSCALED    A2
@@ -25,13 +37,36 @@ class SolOhm {
 #define AMUXS2          28
 #define AMUXOUT         A3
 
+
+#define VBATT1SCALE  4.136/3057.0
+#define VBATT2SCALE  8.279/3351.0
+#define VBATT3SCALE 12.413/3130.0
+#define V3P3SCALE    3.32/3836.0
+#define V5SCALE      5.00/3712.0
+#define VPANELSCALE 25.44/2081.0
+#define IPANELM     -0.0025316
+#define IPANELB      9.6075949
+
+#define CONSOLEPORT  8379
+
 enum {
     DAYSENSORSCALED,
     VBATT1SCALED,
     VBATT2SCALED,
     VBATT3SCALED,
     V3P3SCALED,
-    V5SWSCALED
+    V5SWSCALED,
+};
+
+enum {
+    DAYSENSOR,
+    VBATT1,
+    VBATT2,
+    VBATT3,
+    V3P3,
+    V5,
+    IPANEL,
+    VPANEL
 };
 
 #define ACTIVITYLED     29

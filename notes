@@ -1,0 +1,13 @@
+from 
+http://www.ti.com/lsds/ti/power-management/battery-charger-solutions-products.page#p238max=24;28&p338=Li-Ion/Li-Polymer&p1152=2-4 Cells&p1686=&p2954=
+
+bq24702   simple, $6.4, tssop package
+bq24725A  kinda complicated, all control over smbus, ak
+BQ24753   non-smbus but has controllable, available at ~$7
+
+fet options
+FDH44N50 500 V, 44 A, 120 mOhm, 175C Tc ~$6.00/1000
+
+
+
+
