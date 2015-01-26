@@ -16,3 +16,5 @@ consider ditching activity LED if LP LED is sufficient
 add big solder holes for solar wire
 
 look at rssi with and without solohm
+
+the thermocouple connector to close to mounting hole

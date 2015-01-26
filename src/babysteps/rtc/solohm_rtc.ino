@@ -4,6 +4,7 @@ byte	rtc_bcd[7];
 
 // from https://github.com/sridharrajagopal/DSRTCLib
 // indices within the rtc_bcd[] buffer
+
 #define DSRTCLib_TR     0x10
 #define DSRTCLib_SEC	0
 #define DSRTCLib_MIN	1
@@ -18,6 +19,7 @@ byte	rtc_bcd[7];
 #define DSRTCLib_CTRL_ID		B1101000
 
 // Define register bit masks
+
 #define DSRTCLib_CLOCKHALT	B10000000
 
 #define DSRTCLib_LO_BCD		B00001111
