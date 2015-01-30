@@ -3,28 +3,52 @@
 
 #include "../../libraries/Wire/Wire.h"
 #include "../../libraries/WiFi/WiFi.h"
+#include "../../libraries/WiFi/WiFiServer.h"
 
 #include <stdint.h>
 
 class SolOhm {
     public:
-        SolOhm();
-        void setup();
-        void setup(char *ssid, char *password);
-        void setup(char *ssid, char *password, uint16_t port);
-        void dacSet(uint16_t v);
-        float dmmRead(uint8_t channel);
-        void udpBroadcast(char *s);
+        SolOhm(){};
+        void        setup();
+        void        setup(char *ssid, char *password);
+        void        setup(char *ssid, char *password, uint16_t port);
+        void        dacSet(uint16_t v);
+        float       dmmRead(uint8_t channel);
+        void        udpBroadcast(char *s);
+        void        loop();
+        uint64_t    millis64();
+
     private:
-        void blah();
-        void setRTCRegister(unsigned char registerNumber, unsigned char value);
-        uint8_t getRTCRegister(unsigned char registerNumber);
-        uint16_t amuxRead(uint8_t channel);
-        char wifiSSID[50];
-        char wifiPassword[50];
-        uint16_t consolePort;
-        WiFiUDP udp;
-    
+        void        setRTCRegister(unsigned char registerNumber, unsigned char value);
+        uint8_t     getRTCRegister(unsigned char registerNumber);
+        uint16_t    amuxRead(uint8_t channel);
+        char        wifiSSID[50];
+        char        wifiPassword[50];
+        uint16_t    consolePort;
+        void        activityLEDToggle();
+        void        statusBroadcast();
+        void        statusUpdate();
+
+        WiFiUDP     udp;
+        uint32_t    activityLEDTimeout;
+        uint32_t    statusBroadcastInterval;
+        uint32_t    statusBroadcastTimeout;
+
+        char        consoleBuffer[50];
+        uint8_t     consoleBufferIndex;
+        void        consoleProcess();
+
+        char        tcpBuffer[255];
+        uint8_t     tcpBufferIndex;
+        void        tcpServerProcess();
+
+        char        httpBuffer[255];
+        uint8_t     httpBufferIndex;
+        void        httpServerProcess();
+        void        httpProcessRequest(WiFiClient httpClient);
+        void        httpDispatch(WiFiClient httpClient, char *path, char *query);
+        uint32_t    pathHash(char *s);
 }; 
 
 #define VPANELSCALED    A2
@@ -46,6 +70,8 @@ class SolOhm {
 #define VPANELSCALE 25.44/2081.0
 #define IPANELM     -0.0025316
 #define IPANELB      9.6075949
+
+#define ACTIVITYLEDTIMEOUT 1000
 
 #define CONSOLEPORT  8379
 
@@ -154,6 +180,8 @@ enum {
 #define DSRTCLib_STATUS_A1F B00000001
 
 
+#define PATH_INDEX      47
+#define PATH_STATUS     723
 
 
 
