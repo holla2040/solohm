@@ -59,12 +59,14 @@ class SolOhm {
 
         float       v3p3;
         float       v5p0;
+        float       vbatt;
         float       vbatt1;
         float       vbatt2;
         float       vbatt3;
         uint16_t    daysensor;
         float       vpanel;
         float       ipanel;
+        float       rload;
 
         void        statusGet(char *body);
         void        statusGetJSON(char *body);
@@ -75,6 +77,8 @@ class SolOhm {
 
         float       sweepVoltages[SWEEPLENGTH];
         float       sweepCurrents[SWEEPLENGTH];
+
+        char        mode[10];
 }; 
 
 #define VPANELSCALED    A2

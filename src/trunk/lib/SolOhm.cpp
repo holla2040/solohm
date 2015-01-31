@@ -68,6 +68,7 @@ void SolOhm::setup() {
     consoleBufferIndex = 0;
     tcpBufferIndex = 0;
 
+    strcpy(mode,"manual");
 
     Serial.println("solohm setup");
 }
@@ -235,8 +236,7 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
 
 void SolOhm::statusGet(char *body) {
     char buffer[50];
-    sprintf(buffer,"%d %4d %u.%02u ",millis(),daysensor,(int)vbatt1,(int)(100*vbatt1 - 100*trunc(vbatt1)));
-    strcpy(body,buffer);
+    sprintf(buffer,"%d %4d %u.%02u ",millis(),daysensor,(int)vbatt1,(int)(100*vbatt1 - 100*trunc(vbatt1))); strcpy(body,buffer);
 
     sprintf(buffer,"%u.%02u ",(int)vbatt2,(int)(100*vbatt2 - 100*trunc(vbatt2)));
     strcat(body,buffer);
@@ -267,6 +267,12 @@ void SolOhm::statusGetJSON(char *body) {
     sprintf(buffer,"  \"daysensor\":%d,\n",daysensor);
     strcat(body,buffer);
 
+    sprintf(buffer,"  \"mode\":\"%s\",\n",mode);
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"vbatt\":%u.%02u,\n",(int)vbatt,(int)(100*vbatt - 100*trunc(vbatt)));
+    strcat(body,buffer);
+    
     sprintf(buffer,"  \"vbatt1\":%u.%02u,\n",(int)vbatt1,(int)(100*vbatt1 - 100*trunc(vbatt1)));
     strcat(body,buffer);
 
@@ -280,6 +286,9 @@ void SolOhm::statusGetJSON(char *body) {
     strcat(body,buffer);
 
     sprintf(buffer,"  \"v5p0\":%u.%02u,\n",(int)v5p0,(int)(100*v5p0 - 100*trunc(v5p0)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"rload\":%u.%02u,\n",(int)rload,(int)(100*rload - 100*trunc(rload)));
     strcat(body,buffer);
 
     sprintf(buffer,"  \"vpanel\":%u.%02u,\n",(int)vpanel,(int)(100*vpanel - 100*trunc(vpanel)));
@@ -338,17 +347,22 @@ void SolOhm::indicatorLoop() {
 }
 
 void SolOhm::statusLoop() {
+    float v;
     if (millis64() > statusTimeout) {
         vbatt1    = dmmRead(VBATT1);
-        vbatt2    = dmmRead(VBATT2);
-        vbatt3    = dmmRead(VBATT3);
+        v         = dmmRead(VBATT2);
+        vbatt2    = v - vbatt1;
+        vbatt     = dmmRead(VBATT3);
+        vbatt3    = vbatt - v;
         v3p3      = dmmRead(V3P3);
         v5p0      = dmmRead(V5P0);
         statusTimeout = millis64() + STATUSTIMEOUT;
     }
     daysensor = dmmRead(DAYSENSOR);
     vpanel    = dmmRead(VPANEL);
-    ipanel    = dmmRead(IPANEL);
+    v         = dmmRead(IPANEL) - 0.06;
+    ipanel    = (abs(v) < 0.02)? 0.001:v;
+    rload     = vpanel/ipanel;
 
     statusBroadcast();
 }
@@ -521,6 +535,7 @@ void SolOhm::loadSweep() {
     int i;
     for (i = 0; i < SWEEPLENGTH; i++) {
         dacSet(i * SWEEPSTEP);
+        delay(3);
         sweepVoltages[i] = dmmRead(VPANEL);
         sweepCurrents[i] = dmmRead(IPANEL);
     }
