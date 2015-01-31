@@ -7,6 +7,9 @@
 
 #include <stdint.h>
 
+#define SWEEPLENGTH 1000
+#define SWEEPSTEP   (4096/SWEEPLENGTH)
+
 class SolOhm {
     public:
         SolOhm(){};
@@ -64,8 +67,14 @@ class SolOhm {
         float       ipanel;
 
         void        statusGet(char *body);
+        void        statusGetJSON(char *body);
+        void        statusGetJSONList(char *body);
         uint8_t     channelLast;
+        void        loadSweep();
+        void        loadSweepJSON(char *body);
 
+        float       sweepVoltages[SWEEPLENGTH];
+        float       sweepCurrents[SWEEPLENGTH];
 }; 
 
 #define VPANELSCALED    A2

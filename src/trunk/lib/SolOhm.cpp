@@ -8,9 +8,10 @@
 #include "files.h"
 #include "filedefs.h"
 
-#define PATH_INDEX      47
-#define PATH_STATUS     723
-#define PATH_TEST       495
+#define HTTP_INDEX              47
+#define HTTP_STATUS             723
+#define HTTP_TEST               495
+#define HTTP_LOADSWEEP_JSON     1499
 
 
 WiFiServer  tcp(23);
@@ -170,6 +171,7 @@ uint32_t SolOhm::pathHash(char *s) {
     while (*s) {
         rv += *s++;
     }
+
 /*
     Serial.print("pathHash ");
     Serial.print(s);
@@ -184,18 +186,30 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
     char statusCode[50] = "HTTP/1.1 200 OK";
     char contentType[50] = "Content-Type: text/html";
     char messageBodyHeader[1024] = "<html><body>";
-    char messageBody[4096] = "";
+    char messageBody[28000] = "";
     char messageBodyFooter[1024] = "</body></html>";
 
     switch (pathHash(path)) {
-        case PATH_INDEX:
-            strcat(messageBody,"solohm");
+        case HTTP_INDEX:
+            strcpy(messageBody,(char *)index_html);
             break;
-        case PATH_STATUS:
+        case HTTP_STATUS:
             statusGet(messageBody); 
             break;
-        case PATH_TEST:
-            strcpy(messageBody,(char *)example_min_html);
+        case HTTP_STATUS_JSON:
+            strcpy(contentType,"application/json");
+            strcpy(messageBodyHeader,"");
+            statusGetJSON(messageBody); 
+            strcpy(messageBodyFooter,"");
+            break;
+        case HTTP_LOADSWEEP_JSON:
+            strcpy(contentType,"application/json");
+            strcpy(messageBodyHeader,"");
+            loadSweepJSON(messageBody); 
+            strcpy(messageBodyFooter,"");
+            break;
+        case HTTP_TEST:
+           // strcpy(messageBody,(char *)example_min_html);
             break;
         default:
             strcpy(statusCode,"HTTP/1.1 404 Not Found");
@@ -210,7 +224,9 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
     httpClient.println();
     if (strlen(messageBodyHeader)) {
         httpClient.println(messageBodyHeader);
-        httpClient.println(messageBody);
+    }
+    httpClient.println(messageBody);
+    if (strlen(messageBodyFooter)) {
         httpClient.println(messageBodyFooter);
     }
 
@@ -218,7 +234,7 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
 }
 
 void SolOhm::statusGet(char *body) {
-    char buffer[25];
+    char buffer[50];
     sprintf(buffer,"%d %4d %u.%02u ",millis(),daysensor,(int)vbatt1,(int)(100*vbatt1 - 100*trunc(vbatt1)));
     strcpy(body,buffer);
 
@@ -240,6 +256,65 @@ void SolOhm::statusGet(char *body) {
     sprintf(buffer,"%u.%02u\n",(int)ipanel,(int)(100*ipanel - 100*trunc(ipanel)));
     strcat(body,buffer);
 
+}
+
+void SolOhm::statusGetJSON(char *body) {
+    char buffer[100];
+
+    sprintf(buffer,"{\n  \"uptime\":%d,\n",millis()/1000);
+    strcpy(body,buffer);
+
+    sprintf(buffer,"  \"daysensor\":%d,\n",daysensor);
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"vbatt1\":%u.%02u,\n",(int)vbatt1,(int)(100*vbatt1 - 100*trunc(vbatt1)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"vbatt2\":%u.%02u,\n",(int)vbatt2,(int)(100*vbatt2 - 100*trunc(vbatt2)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"vbatt3\":%u.%02u,\n",(int)vbatt3,(int)(100*vbatt3 - 100*trunc(vbatt3)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"v3p3\":%u.%02u,\n",(int)v3p3,(int)(100*v3p3 - 100*trunc(v3p3)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"v5p0\":%u.%02u,\n",(int)v5p0,(int)(100*v5p0 - 100*trunc(v5p0)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"vpanel\":%u.%02u,\n",(int)vpanel,(int)(100*vpanel - 100*trunc(vpanel)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"ipanel\":%u.%02u\n}",(int)ipanel,(int)(100*ipanel - 100*trunc(ipanel)));
+    strcat(body,buffer);
+}
+
+void SolOhm::statusGetJSONList(char *body) {
+    char buffer[100];
+
+    sprintf(buffer,"{\"status\":[\n  {\"name\":\"uptime\",\"value\":%d,\"unit\":\"mS\"},\n",millis()/1000);
+    strcpy(body,buffer);
+
+    sprintf(buffer,"  {\"name\",\"vbatt1\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)vbatt1,(int)(100*vbatt1 - 100*trunc(vbatt1)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  {\"name\",\"vbatt2\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)vbatt2,(int)(100*vbatt2 - 100*trunc(vbatt2)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  {\"name\",\"vbatt3\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)vbatt3,(int)(100*vbatt3 - 100*trunc(vbatt3)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  {\"name\",\"v3p3\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)v3p3,(int)(100*v3p3 - 100*trunc(v3p3)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  {\"name\",\"v5p0\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)v5p0,(int)(100*v5p0 - 100*trunc(v5p0)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  {\"name\",\"vpanel\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)vpanel,(int)(100*vpanel - 100*trunc(vpanel)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"  {\"name\",\"ipanel\",\"value\":%u.%02u,\"unit\":\"A\"}\n]}",(int)ipanel,(int)(100*ipanel - 100*trunc(ipanel)));
+    strcat(body,buffer);
 }
 
 
@@ -267,13 +342,13 @@ void SolOhm::statusLoop() {
         vbatt1    = dmmRead(VBATT1);
         vbatt2    = dmmRead(VBATT2);
         vbatt3    = dmmRead(VBATT3);
-        daysensor = dmmRead(DAYSENSOR);
         v3p3      = dmmRead(V3P3);
         v5p0      = dmmRead(V5P0);
-        vpanel    = dmmRead(VPANEL);
-        ipanel    = dmmRead(IPANEL);
         statusTimeout = millis64() + STATUSTIMEOUT;
     }
+    daysensor = dmmRead(DAYSENSOR);
+    vpanel    = dmmRead(VPANEL);
+    ipanel    = dmmRead(IPANEL);
 
     statusBroadcast();
 }
@@ -420,3 +495,65 @@ float SolOhm::dmmRead(uint8_t channel) {
 void SolOhm::indicatorLEDToggle() {
     digitalWrite(INDICATORLED,!digitalRead(INDICATORLED));
 }
+
+void SolOhm::loadSweepJSON(char *body) {
+    int i;
+    float p;
+    char buffer[25];
+    loadSweep();
+
+    sprintf(buffer,"[");
+    strcpy(body,buffer);
+
+    for (i = 0; i < SWEEPLENGTH; i++) {
+        p = sweepVoltages[i] * sweepCurrents[i];
+        sprintf(buffer,"[%u.%02u,%u.%02u,%u.%02u],",(int)sweepVoltages[i],(int)(100*sweepVoltages[i] - 100*trunc(sweepVoltages[i])),(int)sweepCurrents[i],(int)(100*sweepCurrents[i] - 100*trunc(sweepCurrents[i])),(int)p,(int)(100*p - 100*trunc(p)));
+        strcat(body,buffer);
+    }
+
+    body[strlen(body) - 1] = 0x00; // pull ', ' chars off body
+
+    sprintf(buffer,"]");
+    strcat(body,buffer);
+}
+
+void SolOhm::loadSweep() {
+    int i;
+    for (i = 0; i < SWEEPLENGTH; i++) {
+        dacSet(i * SWEEPSTEP);
+        sweepVoltages[i] = dmmRead(VPANEL);
+        sweepCurrents[i] = dmmRead(IPANEL);
+    }
+    dacSet(0);
+}
+
+/*
+void SolOhm::loadSweepJSON(char *body) {
+    int i;
+    char buffer[25];
+    loadSweep();
+
+    sprintf(buffer,"{\"voltages\":[");
+    strcpy(body,buffer);
+
+    for (i = 0; i < SWEEPLENGTH; i++) {
+        sprintf(buffer,"%u.%02u,",(int)sweepVoltages[i],(int)(100*sweepVoltages[i] - 100*trunc(sweepVoltages[i])));
+        strcat(body,buffer);
+    }
+
+    body[strlen(body) - 1] = 0x00; // pull ', ' chars off body
+
+    sprintf(buffer,"],\n\"currents\":[");
+    strcat(body,buffer);
+
+    for (i = 0; i < SWEEPLENGTH; i++) {
+        sprintf(buffer,"%u.%02u,",(int)sweepCurrents[i],(int)(100*sweepCurrents[i] - 100*trunc(sweepCurrents[i])));
+        strcat(body,buffer);
+    }
+
+    body[strlen(body) - 1] = 0x00; // pull ', ' chars off body
+
+    sprintf(buffer,"]}\n");
+    strcat(body,buffer);
+}
+*/
