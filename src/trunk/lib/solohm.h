@@ -26,29 +26,46 @@ class SolOhm {
         char        wifiSSID[50];
         char        wifiPassword[50];
         uint16_t    consolePort;
-        void        activityLEDToggle();
-        void        statusBroadcast();
-        void        statusUpdate();
+        void        indicatorLEDToggle();
+
+        void        statusLoop();
+        uint32_t    statusTimeout;
+
+        void        indicatorLoop();
 
         WiFiUDP     udp;
-        uint32_t    activityLEDTimeout;
+        uint32_t    indicatorLEDTimeout;
         uint32_t    statusBroadcastInterval;
         uint32_t    statusBroadcastTimeout;
+        void        statusBroadcast();
 
         char        consoleBuffer[50];
         uint8_t     consoleBufferIndex;
-        void        consoleProcess();
+        void        consoleLoop();
 
         char        tcpBuffer[255];
         uint8_t     tcpBufferIndex;
-        void        tcpServerProcess();
+        void        tcpServerLoop();
 
         char        httpBuffer[255];
         uint8_t     httpBufferIndex;
-        void        httpServerProcess();
+        void        httpServerLoop();
         void        httpProcessRequest(WiFiClient httpClient);
         void        httpDispatch(WiFiClient httpClient, char *path, char *query);
         uint32_t    pathHash(char *s);
+
+        float       v3p3;
+        float       v5p0;
+        float       vbatt1;
+        float       vbatt2;
+        float       vbatt3;
+        uint16_t    daysensor;
+        float       vpanel;
+        float       ipanel;
+
+        void        statusGet(char *body);
+        uint8_t     channelLast;
+
 }; 
 
 #define VPANELSCALED    A2
@@ -71,7 +88,8 @@ class SolOhm {
 #define IPANELM     -0.0025316
 #define IPANELB      9.6075949
 
-#define ACTIVITYLEDTIMEOUT 1000
+#define INDICATORLEDTIMEOUT 1000
+#define STATUSTIMEOUT       5000
 
 #define CONSOLEPORT  8379
 
@@ -90,12 +108,12 @@ enum {
     VBATT2,
     VBATT3,
     V3P3,
-    V5,
+    V5P0,
     IPANEL,
     VPANEL
 };
 
-#define ACTIVITYLED     29
+#define INDICATORLED     29
 
 #define THERMOCOUPLECS  19
 
@@ -179,9 +197,6 @@ enum {
 #define DSRTCLib_STATUS_A2F B00000010
 #define DSRTCLib_STATUS_A1F B00000001
 
-
-#define PATH_INDEX      47
-#define PATH_STATUS     723
 
 
 

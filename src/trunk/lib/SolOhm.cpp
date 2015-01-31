@@ -5,8 +5,15 @@
 #include "WiFi.h"
 #include "WiFiClient.h"
 
+#include "files.h"
+#include "filedefs.h"
 
-// WiFiServer  tcp(23);
+#define PATH_INDEX      47
+#define PATH_STATUS     723
+#define PATH_TEST       495
+
+
+WiFiServer  tcp(23);
 WiFiServer  http(80);
 
 /* for tcp connection testing use 'stty cbreak' to disable tty in buffering */
@@ -37,7 +44,7 @@ void SolOhm::setup() {
     pinMode(V5SWENABLE,OUTPUT);
     digitalWrite(V5SWENABLE,1);
 
-    pinMode(ACTIVITYLED,OUTPUT);
+    pinMode(INDICATORLED,OUTPUT);
 
 // DAC setup
     Wire.beginTransmission(DACADDRESS);
@@ -52,8 +59,9 @@ void SolOhm::setup() {
 
     registerSysTickCb(milliseconds64Update);
 
-    activityLEDTimeout = 0;
-    statusBroadcastInterval = 1000;
+    indicatorLEDTimeout = 0;
+    statusTimeout = 0;
+    statusBroadcastInterval = 5000;
     milliseconds64 = 0;
 
     consoleBufferIndex = 0;
@@ -61,10 +69,9 @@ void SolOhm::setup() {
 
 
     Serial.println("solohm setup");
-
 }
 
-void SolOhm::consoleProcess() {
+void SolOhm::consoleLoop() {
     int c;
     if (Serial.available()) {
         c = Serial.read();
@@ -77,9 +84,9 @@ void SolOhm::consoleProcess() {
     }
 }
         
-void SolOhm::tcpServerProcess() {
+void SolOhm::tcpServerLoop() {
     char c;
-/*
+
     WiFiClient tcpClient = tcp.available();
     if (tcpClient) {
         if (tcpClient.available()) {
@@ -88,17 +95,22 @@ void SolOhm::tcpServerProcess() {
                 tcpBuffer[tcpBufferIndex] = 0x00;
                 Serial.print("tcp:   ");
                 Serial.println(tcpBuffer);
-                tcp.println(tcpBuffer);
+                tcpClient.println(tcpBuffer);
                 tcpBufferIndex = 0;
             } else {
                 tcpBuffer[tcpBufferIndex++] = c;
             }
         }
+
+        if (millis64() > statusBroadcastTimeout) {
+            char buffer[255];
+            statusGet(buffer);
+            tcpClient.print(buffer);
+        }
     }
-*/
 }
 
-void SolOhm::httpServerProcess() {
+void SolOhm::httpServerLoop() {
     char c;
 
     WiFiClient httpClient = http.available();
@@ -127,18 +139,24 @@ void SolOhm::httpProcessRequest(WiFiClient httpClient) {
     char *query;
     char *version;
 
-    //Serial.println(httpBuffer);
+    Serial.print(millis());
+    Serial.print(" ");
+    Serial.println(httpBuffer);
 
     method    = strtok(httpBuffer," ");
     pathquery = strtok(NULL," ");
     version   = strtok(NULL," ");
+ /*
     Serial.println(method);
     Serial.println(pathquery);
+*/
 
     path      = strtok(pathquery,"?");
     query     = strtok(NULL," ");
+/*
     Serial.println(path);
     Serial.println(query);
+*/
     
     httpDispatch(httpClient,path,query);
 }
@@ -152,10 +170,12 @@ uint32_t SolOhm::pathHash(char *s) {
     while (*s) {
         rv += *s++;
     }
+/*
     Serial.print("pathHash ");
     Serial.print(s);
     Serial.print(" ");
     Serial.println(rv,DEC);
+*/
 
     return rv;
 }
@@ -164,7 +184,7 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
     char statusCode[50] = "HTTP/1.1 200 OK";
     char contentType[50] = "Content-Type: text/html";
     char messageBodyHeader[1024] = "<html><body>";
-    char messageBody[1024] = "";
+    char messageBody[4096] = "";
     char messageBodyFooter[1024] = "</body></html>";
 
     switch (pathHash(path)) {
@@ -172,7 +192,10 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
             strcat(messageBody,"solohm");
             break;
         case PATH_STATUS:
-            strcpy(messageBody,"sup?");
+            statusGet(messageBody); 
+            break;
+        case PATH_TEST:
+            strcpy(messageBody,(char *)example_min_html);
             break;
         default:
             strcpy(statusCode,"HTTP/1.1 404 Not Found");
@@ -194,39 +217,75 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
     httpClient.stop();
 }
 
+void SolOhm::statusGet(char *body) {
+    char buffer[25];
+    sprintf(buffer,"%d %4d %u.%02u ",millis(),daysensor,(int)vbatt1,(int)(100*vbatt1 - 100*trunc(vbatt1)));
+    strcpy(body,buffer);
+
+    sprintf(buffer,"%u.%02u ",(int)vbatt2,(int)(100*vbatt2 - 100*trunc(vbatt2)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"%u.%02u ",(int)vbatt3,(int)(100*vbatt3 - 100*trunc(vbatt3)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"%u.%02u ",(int)v3p3,(int)(100*v3p3 - 100*trunc(v3p3)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"%u.%02u ",(int)v5p0,(int)(100*v5p0 - 100*trunc(v5p0)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"%u.%02u ",(int)vpanel,(int)(100*vpanel - 100*trunc(vpanel)));
+    strcat(body,buffer);
+
+    sprintf(buffer,"%u.%02u\n",(int)ipanel,(int)(100*ipanel - 100*trunc(ipanel)));
+    strcat(body,buffer);
+
+}
+
 
 void SolOhm::loop() {
-    statusUpdate();
-    statusBroadcast();
-    consoleProcess();
-    httpServerProcess();
+    indicatorLoop();
+    statusLoop();
+    consoleLoop();
+    httpServerLoop();
+    tcpServerLoop();
 }
 
 uint64_t SolOhm::millis64() {
     return milliseconds64;
 }
 
-void SolOhm::statusUpdate() {
-    if (millis64() > activityLEDTimeout) {
-        activityLEDToggle();
-        activityLEDTimeout = millis64() + ACTIVITYLEDTIMEOUT;
+void SolOhm::indicatorLoop() {
+    if (millis64() > indicatorLEDTimeout) {
+        indicatorLEDToggle();
+        indicatorLEDTimeout = millis64() + INDICATORLEDTIMEOUT;
     }
+}
+
+void SolOhm::statusLoop() {
+    if (millis64() > statusTimeout) {
+        vbatt1    = dmmRead(VBATT1);
+        vbatt2    = dmmRead(VBATT2);
+        vbatt3    = dmmRead(VBATT3);
+        daysensor = dmmRead(DAYSENSOR);
+        v3p3      = dmmRead(V3P3);
+        v5p0      = dmmRead(V5P0);
+        vpanel    = dmmRead(VPANEL);
+        ipanel    = dmmRead(IPANEL);
+        statusTimeout = millis64() + STATUSTIMEOUT;
+    }
+
+    statusBroadcast();
 }
 
 void SolOhm::statusBroadcast() {
     float d,v;
-    char buffer[10];
+    char buffer[255];
     if (millis64() > statusBroadcastTimeout) {
         statusBroadcastTimeout = millis64() + statusBroadcastInterval;
-        d = dmmRead(DAYSENSOR);
-        v = dmmRead(VBATT3);
-v = 1.23456;
-        // sprintf(buffer,"%d %4d %u.%02u\n",millis(),(int)d,(int)v,(int)(100*v - 100*trunc(v)));
-Serial.println(v,6);
-        //sprintf(buffer,"%d %4d %.2f\n",millis(),d,v);
-        sprintf(buffer,"%.2f",v);
-        udpBroadcast(buffer);
-        Serial.println(buffer);
+        statusGet(buffer);
+        //udpBroadcast(buffer);
+        Serial.print(buffer);
     }
 }
 
@@ -267,7 +326,7 @@ void SolOhm::setup(char *ssid, char *password, uint16_t port) {
     }
     Serial.println(WiFi.localIP());
     udp.begin(consolePort);
-    // tcp.begin();
+    tcp.begin();
     http.begin();
 } 
 
@@ -319,7 +378,10 @@ uint16_t SolOhm::amuxRead(uint8_t channel) {
     digitalWrite(AMUXS2,1);
     break;
   }
-  delay(100);
+  if (channel != channelLast) {
+    delay(100);
+  }
+  channelLast = channel;
   return analogRead(AMUXOUT);
 }
 
@@ -342,7 +404,7 @@ float SolOhm::dmmRead(uint8_t channel) {
         case V3P3:      
             return float(amuxRead(V3P3SCALED))*V3P3SCALE;
             break;
-        case V5:      
+        case V5P0:      
             return float(amuxRead(V5SWSCALED))*V5SCALE;
             break;
         case IPANEL:
@@ -355,6 +417,6 @@ float SolOhm::dmmRead(uint8_t channel) {
     return 0.0;
 }
 
-void SolOhm::activityLEDToggle() {
-    digitalWrite(ACTIVITYLED,!digitalRead(ACTIVITYLED));
+void SolOhm::indicatorLEDToggle() {
+    digitalWrite(INDICATORLED,!digitalRead(INDICATORLED));
 }
