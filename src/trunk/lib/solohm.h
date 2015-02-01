@@ -7,7 +7,7 @@
 
 #include <stdint.h>
 
-#define DEBUG 
+// #define DEBUG 1
 
 #define SWEEPLENGTH   500
 #define SWEEPDACSTART 1000

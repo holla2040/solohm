@@ -215,6 +215,11 @@
             <td>A</td>
           </tr>
           <tr>
+            <td>P<sub>panel</sub></sub></td>
+            <td class='right'>{{status.power|number:1}}</td>
+            <td>W</td>
+          </tr>
+          <tr>
             <td>R<sub>load</sub></td>
             <td class='right'>{{status.rload|number:0}}</td>
             <td>&ohm;</td>
@@ -241,12 +246,7 @@
           </tr>
           <tr>
             <td>Day Sensor</td>
-            <td class='right'>{{status.daysensor|number:0}}</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>DAC</td>
-            <td class='right'>{{status.dac|number:0}}</td>
+            <td class='right'>{{status.daysensor}}</td>
             <td></td>
           </tr>
           <tr>
@@ -262,15 +262,16 @@
           </tr>
           <tr>
             <td colspan='3' align='center'>
-                <button ng-click="loaddown()">&lt;&lt;</button>
-                <button ng-click="loadup()">&gt;&gt;</button>
+                <button ng-click="loadup()">&lt;&lt;</button>
+                <span>{{status.dac}}</span>
+                <button ng-click="loaddown()">&gt;&gt;</button>
             </td>
           </tr>
         </table>
     </div>
     <div style='float:left;width:70%'>
-        <div id="paneldiv" style="min-width: 400px; height: 500px; margin: 0 auto"></div>
-        <div id="panelvip" style="min-width: 400px; height: 500px; margin: 0 auto"></div>
+        <div id="paneldiv" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+        <div id="panelvip" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
     </div>
   </body>
 </html>

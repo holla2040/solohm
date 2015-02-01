@@ -282,6 +282,7 @@ void SolOhm::statusGet(char *body) {
 }
 
 void SolOhm::statusGetJSON(char *body) {
+    float power;
     char buffer[100];
 
     sprintf(buffer,"{\n  \"uptime\":%d,\n",millis()/1000);
@@ -315,6 +316,10 @@ void SolOhm::statusGetJSON(char *body) {
     strcat(body,buffer);
 
     sprintf(buffer,"  \"rload\":%u.%02u,\n",(int)rload,(int)(100*rload - 100*trunc(rload)));
+    strcat(body,buffer);
+
+    power = vpanel * ipanel;
+    sprintf(buffer,"  \"power\":%u.%02u,\n",(int)power,(int)(100*power - 100*trunc(power)));
     strcat(body,buffer);
 
     sprintf(buffer,"  \"vpanel\":%u.%02u,\n",(int)vpanel,(int)(100*vpanel - 100*trunc(vpanel)));
@@ -357,8 +362,7 @@ void SolOhm::statusLoop() {
     }
     daysensor = dmmRead(DAYSENSOR);
     vpanel    = dmmRead(VPANEL);
-    v         = dmmRead(IPANEL) - 0.06;
-    ipanel    = (abs(v) < 0.02)?0.00001:v;
+    ipanel    = dmmRead(IPANEL);
     rload     = vpanel/ipanel;
 
     statusBroadcast();
@@ -401,12 +405,13 @@ void SolOhm::setup(char *ssid, char *password, uint16_t port) {
     strcpy(wifiPassword,password);
     consolePort = port;
     Serial.print("wifi: connecting to AP ");
-    Serial.println(wifiSSID);
+    Serial.print(wifiSSID);
     WiFi.begin(wifiSSID,wifiPassword);
     while ( WiFi.status() != WL_CONNECTED) {
+        Serial.print(".");
         delay(300);
     }
-    Serial.print("wifi: getting IP address ");
+    Serial.print("\nwifi: getting IP address ");
     while (WiFi.localIP() == INADDR_NONE) {
         delay(300);
     }
@@ -614,7 +619,7 @@ void SolOhm::loadMPPT(char *body) {
         }
     }
     dacSet(dmax);
-    sprintf(buffer,"dac:%u",d);
+    sprintf(buffer,"dac:%u",dmax);
     strcat(body,buffer);
 }
 
