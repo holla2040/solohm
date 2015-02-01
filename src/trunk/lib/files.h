@@ -7,6 +7,7 @@
 #include "fs/index.html"
 #include "fs/loadsweep.json"
 #include "fs/loadsweep.csv"
+#include "fs/index.html.big"
 
 
 #endif

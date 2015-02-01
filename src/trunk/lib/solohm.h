@@ -7,6 +7,8 @@
 
 #include <stdint.h>
 
+#define DEBUG 
+
 #define SWEEPLENGTH   500
 #define SWEEPDACSTART 1000
 #define SWEEPDACEND   2000
@@ -79,6 +81,10 @@ class SolOhm {
         void        loadSweep();
         void        loadSweepJSON(char *body);
         void        loadSweepCSV(char *body);
+        void        loadMPPT(char *body);
+        void        loadOff(char *body);
+        void        loadUp(char *body);
+        void        loadDown(char *body);
 
         float       sweepVoltages[SWEEPLENGTH];
         float       sweepCurrents[SWEEPLENGTH];

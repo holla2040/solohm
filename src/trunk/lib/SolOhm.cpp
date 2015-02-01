@@ -13,6 +13,10 @@
 #define HTTP_TEST               495
 #define HTTP_LOADSWEEP_JSON     1499
 #define HTTP_LOADSWEEP_CSV      1389
+#define HTTP_LOADOFF            778
+#define HTTP_LOADMPPT           912
+#define HTTP_LOADUP             692
+#define HTTP_LOADDOWN           903
 
 
 WiFiServer  tcp(23);
@@ -174,12 +178,12 @@ uint32_t SolOhm::pathHash(char *s) {
         rv += *s++;
     }
 
-/*
+#ifdef DEBUG
     Serial.print("pathHash ");
     Serial.print(s);
     Serial.print(" ");
     Serial.println(rv,DEC);
-*/
+#endif
 
     return rv;
 }
@@ -215,6 +219,18 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
             strcpy(messageBodyHeader,"");
             loadSweepCSV(messageBody); 
             strcpy(messageBodyFooter,"");
+            break;
+        case HTTP_LOADMPPT:
+            loadMPPT(messageBody); 
+            break;
+        case HTTP_LOADOFF:
+            loadOff(messageBody); 
+            break;
+        case HTTP_LOADUP:
+            loadUp(messageBody); 
+            break;
+        case HTTP_LOADDOWN:
+            loadDown(messageBody); 
             break;
         case HTTP_TEST:
            // strcpy(messageBody,(char *)example_min_html);
@@ -272,6 +288,9 @@ void SolOhm::statusGetJSON(char *body) {
     strcpy(body,buffer);
 
     sprintf(buffer,"  \"daysensor\":%d,\n",daysensor);
+    strcat(body,buffer);
+
+    sprintf(buffer,"  \"dac\":%d,\n",dac);
     strcat(body,buffer);
 
     sprintf(buffer,"  \"mode\":\"%s\",\n",mode);
@@ -516,17 +535,18 @@ void SolOhm::loadSweepJSON(char *body) {
 
 void SolOhm::loadSweep() {
     int i;
-    uint16_t d;
+    uint16_t d,dold;
+    
+    dold = dacGet();
     for (i = 0; i < SWEEPLENGTH; i++) {
         d = i * SWEEPSTEP + SWEEPDACSTART;
         dacSet(d);
-        Serial.println(d);
         delay(3);
         sweepVoltages[i] = dmmRead(VPANEL);
         sweepCurrents[i] = dmmRead(IPANEL);
         sweepDACs[i]     = d;
     }
-    dacSet(0);
+    dacSet(dold);
 }
 
 void SolOhm::loadSweepCSV(char *body) {
@@ -555,4 +575,71 @@ void SolOhm::loadSweepCSV(char *body) {
 
     //body[strlen(body) - 1] = 0x00; // pull ', ' chars off body
     strcat(body,"\n");
+}
+
+void SolOhm::loadOff(char *body) {
+#ifdef DEBUG
+    Serial.println("loadOff");
+#endif
+
+    dacSet(0);
+    strcpy(body,"dac:0");
+}
+
+void SolOhm::loadMPPT(char *body) {
+    int i;
+    float p,pmax;
+    uint16_t d,dmax;
+    char buffer[50];
+    dmax = 0;
+    pmax = 0.0;
+    
+    for (i = 0; i < SWEEPLENGTH; i++) {
+        d = i * SWEEPSTEP + SWEEPDACSTART;
+        dacSet(d);
+        delay(3);
+        p = dmmRead(VPANEL) * dmmRead(IPANEL);
+
+#ifdef DEBUG
+        Serial.print(d);
+        Serial.print(" ");
+        Serial.print(p,2);
+        Serial.print(" ");
+        Serial.println(pmax,2);
+#endif
+
+        if (p > pmax) {
+            dmax = d;
+            pmax = p;
+        }
+    }
+    dacSet(dmax);
+    sprintf(buffer,"dac:%u",d);
+    strcat(body,buffer);
+}
+
+void SolOhm::loadUp(char *body) {
+    char buffer[50];
+    uint16_t d;
+    d = dacGet();
+    d -= 25;
+    if (d < 50) {
+        d = 0;
+    } 
+    sprintf(buffer,"dac:%u",d);
+    strcat(body,buffer);
+    dacSet(d);
+}
+
+void SolOhm::loadDown(char *body) {
+    char buffer[50];
+    uint16_t d;
+    d = dacGet();
+    d += 25;
+    if (d > 3000) {
+        d = 4000;
+    } 
+    sprintf(buffer,"dac:%u",d);
+    strcat(body,buffer);
+    dacSet(d);
 }
