@@ -20,9 +20,32 @@
         };
 
         $scope.sweep = function() {
-            console.log("sweep");
-            $http.get('loadsweep.json').success(function(data) {
-                $('#loadsweep').highcharts({
+            var i;
+            $http.get('loadsweep.csv').success(function(data) {
+                var lines=data.split("\n");
+                var dacs = [];
+                var voltages = [];
+                var currents = [];
+                var rloads = [];
+                var powers = [];
+                var dv     = [];
+                var dc     = [];
+                var vi     = [];
+                var vp     = [];
+                for (i=2;i<lines.length;i++) {
+                    var fields=lines[i].split(",");
+                    dacs.push(parseInt(fields[0]));
+                    voltages.push(parseFloat(fields[1]));
+                    currents.push(parseFloat(fields[2]));
+                    rloads.push(parseFloat(fields[3]));
+                    powers.push(parseFloat(fields[4]));
+                    dv.push([parseInt(fields[0]),parseFloat(fields[1])]);
+                    dc.push([parseInt(fields[0]),parseFloat(fields[2])]);
+                    vi.push([parseFloat(fields[1]),parseFloat(fields[2])]);
+                    vp.push([parseFloat(fields[1]),parseFloat(fields[4])]);
+                }
+
+                $('#paneldiv').highcharts({
                     chart: {
                         type: 'scatter',
                         zoomType: 'xy'
@@ -31,26 +54,25 @@
                           enabled: false
                     },
                     title: {
-                        text: 'Panel IV Curve'
+                        text: 'Panel I and V'
                     },
                     subtitle: {
                         text: 'serial# here'
                     },
                     xAxis: {
                         title: {
-                            text: 'Voltage'
+                            text: 'DAC'
                         },
-                        min: 0,
                     },
-                    yAxis: {
-                        title: {
-                            text: 'Current'
-                        },
-                        min: 0
-                    },
+
+                    yAxis: [
+                        { title: { text: 'Voltage' }, min: 0, opposite: true },
+                        { title: { text: 'Current' }, min: 0 }
+                    ],
+
                     tooltip: {
                         headerFormat: '<b>{series.name}</b><br>',
-                        pointFormat: '{point.y:.2f}V@{point.y:.2f}A'
+                        pointFormat: 'DAC {point.x},{point.y:.2f}'
                     },
 
                     plotOptions: {
@@ -60,18 +82,76 @@
                             }
                         }
                     },
-                    series: [{
-                        name: "Panel V@A",
-                        showInLegend: false,      
-                        animation: false,
+                    series: [
+                        {name: "Vpanel",
+                        type: "scatter",
+                        yAxis: 0,
+                        animation:false,
                         marker: {symbol:'circle',radius:2},
-                        data:data
-                    }]
+                        data:dv},
+                        {name: "Ipanel",
+                        yAxis: 1,
+                        animation:false,
+                        type: "scatter",
+                        marker: {symbol:'circle',radius:2},
+                        data:dc}
+                    ]
                 });
-            });
+
+                $('#panelvip').highcharts({
+                    chart: {
+                        type: 'scatter',
+                        zoomType: 'xy'
+                    },
+                    credits: {
+                          enabled: false
+                    },
+                    title: {
+                        text: 'Panel IV and Power'
+                    },
+                    subtitle: {
+                        text: 'serial# here'
+                    },
+                    xAxis: {
+                        title: {
+                            text: 'Voltage'
+                        },
+                    },
+
+                    yAxis: [
+                        { title: { text: 'Power' }, min: 0, opposite: true },
+                        { title: { text: 'Current' }, min: 0 }
+                    ],
+
+                    tooltip: {
+                        headerFormat: '<b>{series.name}</b><br>',
+                        pointFormat: '{point.x}V,{point.y:.2f}'
+                    },
+
+                    plotOptions: {
+                        spline: {
+                            marker: {
+                                enabled: true
+                            }
+                        }
+                    },
+                    series: [
+                        {name: "Power",
+                        type: "scatter",
+                        yAxis: 0,
+                        animation:false,
+                        marker: {symbol:'circle',radius:2},
+                        data:vp},
+                        {name: "Current",
+                        yAxis: 1,
+                        animation:false,
+                        type: "scatter",
+                        marker: {symbol:'circle',radius:2},
+                        data:vi}
+                    ]
+                });
+             });
         };
-        
-        $timeout($scope.sweep, 2000);
 
         statusLoop();
       });
@@ -83,7 +163,7 @@
     </style>
   </head>
   <body ng-controller="solohmCtrl">
-    <div style="float:left">
+    <div style="float:left;width:20%">
         <table>
           <tr>
             <th>Variable</th>
@@ -116,22 +196,22 @@
             <td>&ohm;</td>
           </tr>
           <tr>
-            <td>V<sub>batt</sub></td>
+            <td>V<sub>battery</sub></td>
             <td class='right'>{{status.vbatt|number:2}}</td>
             <td>V</td>
           </tr>
           <tr>
-            <td>V<sub>batt1</sub></td>
+            <td>V<sub>battery1</sub></td>
             <td class='right'>{{status.vbatt1|number:2}}</td>
             <td>V</td>
           </tr>
           <tr>
-            <td>V<sub>batt2</sub></td>
+            <td>V<sub>battery2</sub></td>
             <td class='right'>{{status.vbatt2|number:2}}</td>
             <td>V</td>
           </tr>
           <tr>
-            <td>V<sub>batt3</sub></td>
+            <td>V<sub>battery3</sub></td>
             <td class='right'>{{status.vbatt3|number:2}}</td>
             <td>V</td>
           </tr>
@@ -144,10 +224,15 @@
             <td>Updated</td>
             <td class='right' colspan='2'>{{lastUpdate| date:'HH:mm:ss'}}</td>
           </tr>
+          <tr>
+            <td colspan='3' align='center'><button ng-click="sweep()">Sweep</button></td>
+          </tr>
         </table>
-        <button ng-click="sweep()">Sweep</button>
     </div>
-    <div id="loadsweep" style="float:left" style="min-width: 400px; height: 500px; margin: 0 auto">Requesting data ...</div>
+    <div style='float:left;width:70%'>
+        <div id="paneldiv" style="min-width: 400px; height: 500px; margin: 0 auto"></div>
+        <div id="panelvip" style="min-width: 400px; height: 500px; margin: 0 auto"></div>
+    </div>
   </body>
 </html>
 

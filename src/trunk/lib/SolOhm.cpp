@@ -12,6 +12,7 @@
 #define HTTP_STATUS             723
 #define HTTP_TEST               495
 #define HTTP_LOADSWEEP_JSON     1499
+#define HTTP_LOADSWEEP_CSV      1389
 
 
 WiFiServer  tcp(23);
@@ -209,6 +210,12 @@ void SolOhm::httpDispatch(WiFiClient httpClient, char *path, char *query) {
             loadSweepJSON(messageBody); 
             strcpy(messageBodyFooter,"");
             break;
+        case HTTP_LOADSWEEP_CSV:
+            strcpy(contentType,"text/csv");
+            strcpy(messageBodyHeader,"");
+            loadSweepCSV(messageBody); 
+            strcpy(messageBodyFooter,"");
+            break;
         case HTTP_TEST:
            // strcpy(messageBody,(char *)example_min_html);
             break;
@@ -298,35 +305,6 @@ void SolOhm::statusGetJSON(char *body) {
     strcat(body,buffer);
 }
 
-void SolOhm::statusGetJSONList(char *body) {
-    char buffer[100];
-
-    sprintf(buffer,"{\"status\":[\n  {\"name\":\"uptime\",\"value\":%d,\"unit\":\"mS\"},\n",millis()/1000);
-    strcpy(body,buffer);
-
-    sprintf(buffer,"  {\"name\",\"vbatt1\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)vbatt1,(int)(100*vbatt1 - 100*trunc(vbatt1)));
-    strcat(body,buffer);
-
-    sprintf(buffer,"  {\"name\",\"vbatt2\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)vbatt2,(int)(100*vbatt2 - 100*trunc(vbatt2)));
-    strcat(body,buffer);
-
-    sprintf(buffer,"  {\"name\",\"vbatt3\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)vbatt3,(int)(100*vbatt3 - 100*trunc(vbatt3)));
-    strcat(body,buffer);
-
-    sprintf(buffer,"  {\"name\",\"v3p3\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)v3p3,(int)(100*v3p3 - 100*trunc(v3p3)));
-    strcat(body,buffer);
-
-    sprintf(buffer,"  {\"name\",\"v5p0\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)v5p0,(int)(100*v5p0 - 100*trunc(v5p0)));
-    strcat(body,buffer);
-
-    sprintf(buffer,"  {\"name\",\"vpanel\",\"value\":%u.%02u,\"unit\":\"V\"},\n",(int)vpanel,(int)(100*vpanel - 100*trunc(vpanel)));
-    strcat(body,buffer);
-
-    sprintf(buffer,"  {\"name\",\"ipanel\",\"value\":%u.%02u,\"unit\":\"A\"}\n]}",(int)ipanel,(int)(100*ipanel - 100*trunc(ipanel)));
-    strcat(body,buffer);
-}
-
-
 void SolOhm::loop() {
     indicatorLoop();
     statusLoop();
@@ -361,7 +339,7 @@ void SolOhm::statusLoop() {
     daysensor = dmmRead(DAYSENSOR);
     vpanel    = dmmRead(VPANEL);
     v         = dmmRead(IPANEL) - 0.06;
-    ipanel    = (abs(v) < 0.02)? 0.001:v;
+    ipanel    = (abs(v) < 0.02)?0.00001:v;
     rload     = vpanel/ipanel;
 
     statusBroadcast();
@@ -427,11 +405,16 @@ void SolOhm::udpBroadcast(char *s) {
 }
 
 void SolOhm::dacSet(uint16_t v) {
+    dac = v;
     Wire.beginTransmission(DACADDRESS);
     Wire.write(MCP4726_CMD_WRITEDAC);
     Wire.write(v / 16);                   // Upper data bits          (D11.D10.D9.D8.D7.D6.D5.D4)
     Wire.write((v % 16) << 4);            // Lower data bits          (D3.D2.D1.D0.x.x.x.x)
     Wire.endTransmission();
+}
+
+uint16_t SolOhm::dacGet() {
+    return dac;
 }
 
 uint16_t SolOhm::amuxRead(uint8_t channel) {
@@ -533,42 +516,43 @@ void SolOhm::loadSweepJSON(char *body) {
 
 void SolOhm::loadSweep() {
     int i;
+    uint16_t d;
     for (i = 0; i < SWEEPLENGTH; i++) {
-        dacSet(i * SWEEPSTEP);
+        d = i * SWEEPSTEP + SWEEPDACSTART;
+        dacSet(d);
+        Serial.println(d);
         delay(3);
         sweepVoltages[i] = dmmRead(VPANEL);
         sweepCurrents[i] = dmmRead(IPANEL);
+        sweepDACs[i]     = d;
     }
     dacSet(0);
 }
 
-/*
-void SolOhm::loadSweepJSON(char *body) {
+void SolOhm::loadSweepCSV(char *body) {
     int i;
-    char buffer[25];
+    float f;
+    char buffer[50];
     loadSweep();
 
-    sprintf(buffer,"{\"voltages\":[");
+    sprintf(buffer,"dac,voltage,current,rload,power\n");
     strcpy(body,buffer);
 
     for (i = 0; i < SWEEPLENGTH; i++) {
+        sprintf(buffer,"%d,",sweepDACs[i]);
+        strcat(body,buffer);
         sprintf(buffer,"%u.%02u,",(int)sweepVoltages[i],(int)(100*sweepVoltages[i] - 100*trunc(sweepVoltages[i])));
         strcat(body,buffer);
-    }
-
-    body[strlen(body) - 1] = 0x00; // pull ', ' chars off body
-
-    sprintf(buffer,"],\n\"currents\":[");
-    strcat(body,buffer);
-
-    for (i = 0; i < SWEEPLENGTH; i++) {
         sprintf(buffer,"%u.%02u,",(int)sweepCurrents[i],(int)(100*sweepCurrents[i] - 100*trunc(sweepCurrents[i])));
+        strcat(body,buffer);
+        f = sweepVoltages[i]/sweepCurrents[i];
+        sprintf(buffer,"%u.%02u,",(int)f,(int)(100*f - 100*trunc(f)));
+        strcat(body,buffer);
+        f = sweepVoltages[i]*sweepCurrents[i];
+        sprintf(buffer,"%u.%02u\n",(int)f,(int)(100*f - 100*trunc(f)));
         strcat(body,buffer);
     }
 
-    body[strlen(body) - 1] = 0x00; // pull ', ' chars off body
-
-    sprintf(buffer,"]}\n");
-    strcat(body,buffer);
+    //body[strlen(body) - 1] = 0x00; // pull ', ' chars off body
+    strcat(body,"\n");
 }
-*/

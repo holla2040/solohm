@@ -7,8 +7,10 @@
 
 #include <stdint.h>
 
-#define SWEEPLENGTH 1000
-#define SWEEPSTEP   (4096/SWEEPLENGTH)
+#define SWEEPLENGTH   500
+#define SWEEPDACSTART 1000
+#define SWEEPDACEND   2000
+#define SWEEPSTEP   ((SWEEPDACEND-SWEEPDACSTART)/SWEEPLENGTH)
 
 class SolOhm {
     public:
@@ -17,6 +19,7 @@ class SolOhm {
         void        setup(char *ssid, char *password);
         void        setup(char *ssid, char *password, uint16_t port);
         void        dacSet(uint16_t v);
+        uint16_t    dacGet();
         float       dmmRead(uint8_t channel);
         void        udpBroadcast(char *s);
         void        loop();
@@ -68,15 +71,18 @@ class SolOhm {
         float       ipanel;
         float       rload;
 
+        uint16_t    dac;
+
         void        statusGet(char *body);
         void        statusGetJSON(char *body);
-        void        statusGetJSONList(char *body);
         uint8_t     channelLast;
         void        loadSweep();
         void        loadSweepJSON(char *body);
+        void        loadSweepCSV(char *body);
 
         float       sweepVoltages[SWEEPLENGTH];
         float       sweepCurrents[SWEEPLENGTH];
+        uint16_t    sweepDACs[SWEEPLENGTH];
 
         char        mode[10];
 }; 
